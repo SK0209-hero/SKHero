@@ -150,7 +150,7 @@ margin-top:1vw;
   top: 0;
   bottom: 0;
   z-index: -1;
-  background-color: #57819D;
+  background: linear-gradient(to bottom , rgb(18, 111, 111),rgb(50, 146, 146));
 }
 
 #chara-title {
@@ -424,6 +424,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
   margin: 0 10vw;
+  margin-bottom: 5vw;
 }
 
 .cast-section {
@@ -435,7 +436,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 }
 
 .cast-section h3 {
-  font-size: calc(60 / 1920 *100vw);
+  font-size: calc(33 / 1920 *100vw);
   font-weight: 600;
   margin-bottom: 25px;
   color: var(--accent-blue);
@@ -470,12 +471,12 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
 .cast-role {
   font-weight: 500;
-  font-size: calc(40 / 1920 *100vw);
+  font-size: calc(23 / 1920 *100vw);
 }
 
 .cast-name {
   color: var(--text-secondary);
-  font-size: calc(45 / 1920 *100vw);
+  font-size: calc(28 / 1920 *100vw);
 }
 
 /* .chara-bottom{
