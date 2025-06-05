@@ -11,6 +11,7 @@
   --accent-pink: #e91e63;
   --shadow-light: 0 10px 30px rgba(0, 0, 0, 0.1);
   --shadow-heavy: 0 20px 60px rgba(0, 0, 0, 0.15);
+  --line-color: #7AB3BF;
 }
 
 body {
@@ -296,6 +297,19 @@ background-image: url("https://www.transparenttextures.com/patterns/45-degree-fa
     }
   }
 
+  .chara-buttons .chara-button-active{
+    box-shadow: 0px 10px 10px rgb(0, 0, 0, 0.3);
+    
+  border: rgb(182, 204, 210) 3px double;
+    img{
+    transform: scale(1.5);
+    filter: brightness(100%);
+    }
+  }
+  .chara-buttons .chara-button-active::before{
+    opacity: 1;
+  }
+
   .chara-buttons button:hover::before{
     opacity: 1;
   }
@@ -357,7 +371,7 @@ background-image: url("https://www.transparenttextures.com/patterns/45-degree-fa
 
 .schedule-container-line {
   width: calc(3 / 1920*100vw); 
-    background-color: #28595e; 
+    background-color: var(--line-color); 
     height: 60vw; 
     border-radius: 2px; 
     position: absolute;
@@ -374,7 +388,7 @@ background-image: url("https://www.transparenttextures.com/patterns/45-degree-fa
     transform: translateX(-50%);
     width: calc(20 /1920*100vw);
     height: calc(20 /1920*100vw); 
-    border: 2px solid #38768a; 
+    border: 3px solid #3D7082; 
     border-radius: 50%;
     background-color: transparent;
 }
@@ -400,7 +414,7 @@ background-image: url("https://www.transparenttextures.com/patterns/45-degree-fa
   width: 70%;
   right:1.2vw;
   height: calc(3 / 1920*100vw);
-  background-color: #28595e;
+  background-color: var(--line-color);
 }
 
 .schedule-date-line::before{
@@ -411,15 +425,16 @@ background-image: url("https://www.transparenttextures.com/patterns/45-degree-fa
     right: -0.05vw;
     width: calc(13 /1920*100vw);
     aspect-ratio: 1;
-    border: 1px solid #38768a;
+    border: 1px solid #478196;
     border-radius: 50%;
-    background-color: white;
+    background-color: #e0edef;
 }
 
 .schedule-date{
   font-family: "Oswald";
   font-size: calc(55 /1920*100vw);
   text-align: right;
+  color: #222222;
 }
 
 .schedule-date::before{
@@ -444,7 +459,9 @@ background-image: url("https://www.transparenttextures.com/patterns/45-degree-fa
   height: 6vw;
   border-radius: 20px;
   width: 69.5%;
-  background-color: #7AB3Bf;
+  background-color: #659ea9;
+background-image: url("https://www.transparenttextures.com/patterns/cross-scratches.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
   margin-left: auto;
   margin-right: 1.5vw;
   margin-bottom:2vw;
@@ -454,7 +471,7 @@ background-image: url("https://www.transparenttextures.com/patterns/45-degree-fa
   position: absolute;
   height: calc(3 /1920*100vw);
   width: 20%;
-  background-color: #28595e;
+  background-color: var(--line-color);
   top:50%;
   right: -5vw;
   z-index: -1; 
@@ -467,9 +484,9 @@ background-image: url("https://www.transparenttextures.com/patterns/45-degree-fa
     right: -0.4vw;
     width: calc(13 /1920*100vw); 
     aspect-ratio: 1;
-    border: 1px solid #38768a; 
+    border: 1px solid #478196; 
     border-radius: 50%;
-    background-color: white;
+    background-color: #e0edef;
     z-index: 200;
 }
 
@@ -486,6 +503,7 @@ background-image: url("https://www.transparenttextures.com/patterns/45-degree-fa
 
 .schedule-spotimg{
   height: 100%;
+  border-radius: 20px;
   aspect-ratio: 1.8;
   background-color: gray;
 }

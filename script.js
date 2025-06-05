@@ -1,6 +1,7 @@
 const buttons = document.querySelectorAll(".chara-buttons button[data-group]");
 const groups = document.querySelectorAll(".chara-group");
 let currentGroup = document.querySelector(".chara-group.chara-show");
+let currentActiveButton = document.querySelector(".chara-button-active");
 let ButtonToggle = false;
 
 buttons.forEach(button => {
@@ -9,7 +10,13 @@ buttons.forEach(button => {
     const nextGroup = document.querySelector("." + targetClass);
 
     if (currentGroup === nextGroup || ButtonToggle) return;
+    
 
+    //ボタン
+    currentActiveButton.classList.remove("chara-button-active");
+    button.classList.add("chara-button-active");
+
+    currentActiveButton = button;
     // 現在のグループをフェードアウト
     currentGroup.classList.remove("chara-show");
     currentGroup.classList.add("chara-hide");
