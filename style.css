@@ -11,7 +11,7 @@
   --accent-pink: #e91e63;
   --shadow-light: 0 10px 30px rgba(0, 0, 0, 0.1);
   --shadow-heavy: 0 20px 60px rgba(0, 0, 0, 0.15);
-  --line-color: #7AB3BF;
+  --line-color: #7ab3bf;
 }
 
 body {
@@ -19,7 +19,7 @@ body {
   overflow-x: hidden;
   font-family: Arial, sans-serif;
   background-color: #ffffff;
-background-image: url("img/background.png");
+  background-image: url("img/background.png");
 }
 .area_poster {
   margin-bottom: calc(100 / 1080 * 100vh);
@@ -38,13 +38,13 @@ background-image: url("img/background.png");
 }
 
 .section-title {
-font-family: 'Oswald';
-font-style: normal;
-font-weight: 500;
-font-size: calc(70 /1920 *100vw);
-letter-spacing: 0.13em;
-color: #222222;
-margin-top:1vw;
+  font-family: "Oswald";
+  font-style: normal;
+  font-weight: 500;
+  font-size: calc(70 / 1920 * 100vw);
+  letter-spacing: 0.13em;
+  color: #222222;
+  margin-top: 1vw;
 }
 
 /* Animations */
@@ -72,70 +72,69 @@ margin-top:1vw;
   animation-delay: 0.4s;
 }
 
-.intro-area{
+.intro-area {
   position: relative;
   width: 100%;
   display: flex;
   align-items: stretch;
 }
 
-.intro-img{
-  flex:1;
+.intro-img {
+  flex: 1;
   width: 50%;
   clip-path: polygon(100% 0, 17% 0, 0 100%, 100% 100%);
   background-position: right center;
   filter: brightness(0.6);
   overflow: hidden;
 }
-.intro-img img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
+.intro-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
-.intro-textarea{
-  flex:1;
-  
+.intro-textarea {
+  flex: 1;
+
   padding-left: 7.5vw;
   width: 50%;
   padding-bottom: 8vw;
 }
 
 .intro-text-content p {
-  font-family: 'Open Sans', 'Lato', sans-serif;
-  font-size: calc(30 / 1920 * 100vw); 
-  line-height: 1.8; 
-  color: #2C3E50;
+  font-family: "Open Sans", "Lato", sans-serif;
+  font-size: calc(30 / 1920 * 100vw);
+  line-height: 1.8;
+  color: #2c3e50;
   margin-bottom: 1.5em;
 }
 
 .intro-text-content .highlight-main {
-  font-weight: bold; 
-  color: #3498DB;
+  font-weight: bold;
+  color: #3498db;
 }
 
-
 .intro-text-content .highlight-concept {
-  font-weight: bold; 
-  color: #9B59B6; 
+  font-weight: bold;
+  color: #9b59b6;
 }
 
 .intro-text-content .highlight-impact {
   font-weight: bold;
-  color: #E74C3C;
+  color: #e74c3c;
   text-shadow: 0 0 5px rgba(231, 76, 60, 0.5);
 }
 
 .intro-text-content .question {
   font-style: italic;
-  margin-top: calc(32 /1920 * 100vw);
-  border-left: calc(5 / 1920 * 100vw) solid #3498DB;
+  margin-top: calc(32 / 1920 * 100vw);
+  border-left: calc(5 / 1920 * 100vw) solid #3498db;
   padding-left: calc(15 / 1920 * 100vw);
 }
 
 .intro-section {
-  background-color: #ECF0F1;
+  background-color: #ecf0f1;
 }
 
 .chara-area {
@@ -152,100 +151,102 @@ margin-top:1vw;
   top: 0;
   bottom: 0;
   z-index: -1;
-  background-image: url("https://www.transparenttextures.com/patterns/60-lines.png"),linear-gradient(to bottom , #126f6f,rgb(50, 146, 146));
+  background-image: url("https://www.transparenttextures.com/patterns/60-lines.png"),
+    linear-gradient(to bottom, #126f6f, rgb(50, 146, 146));
 }
 
 #chara-title {
   text-align: center;
-  color:#EAEAEA;
+  color: #eaeaea;
 }
 
-.chara-container{
+.chara-container {
   position: relative;
-  
+
   padding: 0 10vw 0 20vw;
   height: calc(600 / 1920 * 100vw);
   margin-bottom: 1.5vw;
   border: #5353535b 2px solid;
   box-shadow: 0px 0px 4px 5px rgba(0, 0, 0, 0.15);
-background-color: #545c64;
-background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
-/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */}
-.chara-image{
+  background-color: #545c64;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+.chara-image {
   width: 50%;
   height: 100%;
-  img{
+  img {
     height: 100%;
   }
 }
-.chara-textarea{
+.chara-textarea {
   position: relative;
   max-height: 100%;
   top: calc(75 / 1920 * 100vw);
   width: 50%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; 
+  justify-content: flex-start;
   align-items: left;
   text-align: left;
   position: relative;
   margin-left: -7vw;
   letter-spacing: 0.3vw;
   font-family: "Noto Serif JP";
-  color: #EAEAEA;
+  color: #eaeaea;
 }
 
-.chara-name{
+.chara-name {
   padding-top: 3vw;
 }
 
-.chara-real{
+.chara-real {
   font-style: normal;
   font-weight: 700;
   font-size: calc(40 / 1920 * 100vw);
-  margin-bottom: calc(5 /1920*100vw);
+  margin-bottom: calc(5 / 1920 * 100vw);
 }
-.chara-master::before{
-  content:"演者";
+.chara-master::before {
+  content: "演者";
   font-size: calc(17 / 1920 * 100vw);
 }
-.chara-master{
+.chara-master {
   font-style: normal;
   font-weight: 400;
   font-size: calc(25 / 1920 * 100vw);
   line-height: 0;
-  margin:0;
-  padding-top:10px;
+  margin: 0;
+  padding-top: 10px;
 }
-.chara-text{
-  padding-top:3vw;
+.chara-text {
+  padding-top: 3vw;
   flex-direction: row;
   font-size: calc(20 / 1920 * 100vw);
 }
-.chara-design{
+.chara-design {
   opacity: 1;
   position: relative;
   align-items: center;
-  top:2.2vw;
-  .chara-line{
+  top: 2.2vw;
+  .chara-line {
     background-color: #b8a500;
     height: 1px;
-    width:  100%;
+    width: 100%;
   }
-  .chara-square{
+  .chara-square {
     position: relative;
     width: 10px;
     height: 10px;
     transform: rotate(45deg);
     background-color: #b8a500;
     left: 50%;
-    top:-4px
+    top: -4px;
   }
 }
 
 .chara-buttons {
   position: relative;
-  margin:0;
+  margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -253,87 +254,87 @@ background-image: url("https://www.transparenttextures.com/patterns/45-degree-fa
   margin-bottom: 8vw;
 }
 
-.chara-buttons button{
+.chara-buttons button {
   position: relative;
   background-color: rgb(88, 88, 88);
   border-radius: 50%;
   width: calc(100 / 1920 * 100vw);
   height: calc(100 / 1920 * 100vw);
   border: rgb(0, 67, 84) 3px double;
-  box-shadow: 0px 10px 10px rgba(0,0,0,0.2);
-  margin: 0 calc(20/1920 *100vw);
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+  margin: 0 calc(20 / 1920 * 100vw);
   overflow: hidden;
   transition: background-color 0.3s ease;
   img {
     object-fit: contain;
     height: 100%;
     width: 100%;
-    transform:scale(1);
-    transition: filter 0.3s ease,transform 0.3s ease;
+    transform: scale(1);
+    transition: filter 0.3s ease, transform 0.3s ease;
     filter: brightness(50%);
   }
 }
 
-.chara-buttons button::before{
-  position:absolute;
+.chara-buttons button::before {
+  position: absolute;
 
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   opacity: 0;
-    background-image: radial-gradient( #ffffff, #d8d8d8);
-    content: "";
-    transition: opacity 0.3s ease;
+  background-image: radial-gradient(#ffffff, #d8d8d8);
+  content: "";
+  transition: opacity 0.3s ease;
 }
 
-.chara-buttons button:hover{
-    box-shadow: 0px 10px 10px rgb(0, 0, 0, 0.3);
-    
+.chara-buttons button:hover {
+  box-shadow: 0px 10px 10px rgb(0, 0, 0, 0.3);
+
   border: rgb(182, 204, 210) 3px double;
-    img{
+  img {
     transform: scale(1.5);
     filter: brightness(100%);
-    }
   }
+}
 
-  .chara-buttons .chara-button-active{
-    box-shadow: 0px 10px 10px rgb(0, 0, 0, 0.3);
-    
+.chara-buttons .chara-button-active {
+  box-shadow: 0px 10px 10px rgb(0, 0, 0, 0.3);
+
   border: rgb(182, 204, 210) 3px double;
-    img{
+  img {
     transform: scale(1.5);
     filter: brightness(100%);
-    }
   }
-  .chara-buttons .chara-button-active::before{
-    opacity: 1;
-  }
+}
+.chara-buttons .chara-button-active::before {
+  opacity: 1;
+}
 
-  .chara-buttons button:hover::before{
-    opacity: 1;
-  }
+.chara-buttons button:hover::before {
+  opacity: 1;
+}
 
-  .chara-group {
-    position: relative;
-    visibility: hidden;
-    opacity: 0;
-  }
-  .chara-intro{
-    position: absolute;
-    display: flex;
-    height: calc(600 / 1920 * 100vw);
+.chara-group {
+  position: relative;
+  visibility: hidden;
+  opacity: 0;
+}
+.chara-intro {
+  position: absolute;
+  display: flex;
+  height: calc(600 / 1920 * 100vw);
   width: 100%;
-  }
-  .chara-show{
-    visibility: visible;
-    animation: fadeInSlide 0.2s forwards;
-  }
+}
+.chara-show {
+  visibility: visible;
+  animation: fadeInSlide 0.2s forwards;
+}
 
-  .chara-hide{
-    visibility: visible;
-    animation: fadeOutSlide 0.2s forwards;
-  }
+.chara-hide {
+  visibility: visible;
+  animation: fadeOutSlide 0.2s forwards;
+}
 @keyframes fadeInSlide {
   from {
     opacity: 0;
@@ -352,11 +353,11 @@ background-image: url("https://www.transparenttextures.com/patterns/45-degree-fa
   }
 }
 
-#schedule-section{
+#schedule-section {
   height: 75vw;
 }
 
-#schedule-header{
+#schedule-header {
   text-align: right;
   padding-right: 7.5vw;
   margin-top: -6vw;
@@ -365,243 +366,261 @@ background-image: url("https://www.transparenttextures.com/patterns/45-degree-fa
 
 .schedule-container {
   position: relative;
-  padding:0 7.5vw;
+  padding: 0 7.5vw;
   height: 50vh; /*test*/
 }
 
 .schedule-container-line {
-  width: calc(3 / 1920*100vw); 
-    background-color: var(--line-color); 
-    height: 60vw; 
-    border-radius: 2px; 
-    position: absolute;
-    right: 9%;
-    z-index: 10;
+  width: calc(3 / 1920 * 100vw);
+  background-color: var(--line-color);
+  height: 60vw;
+  border-radius: 2px;
+  position: absolute;
+  right: 9%;
+  z-index: 10;
 }
 
 .schedule-container-line::before,
 .schedule-container-line::after {
   z-index: 15;
-    content: '';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(20 /1920*100vw);
-    height: calc(20 /1920*100vw); 
-    border: 3px solid #3D7082; 
-    border-radius: 50%;
-    background-color: transparent;
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(20 / 1920 * 100vw);
+  height: calc(20 / 1920 * 100vw);
+  border: 3px solid #3d7082;
+  border-radius: 50%;
+  background-color: transparent;
 }
 
-.schedule-container-line::after{
-  bottom:-0.55vw;
+.schedule-container-line::after {
+  bottom: -0.55vw;
   transform: translate(-50%, 50%);
 }
-.schedule-container-line::before{
-  top:-0.55vw;
+.schedule-container-line::before {
+  top: -0.55vw;
   transform: translate(-50%, -50%);
 }
 
-.schedule-section{
+.schedule-section {
   padding: 5vw 5vw 0 5vw;
   position: relative;
   z-index: 20;
 }
 
-.schedule-date-line{
-  z-index: 13; 
+.schedule-date-line {
+  z-index: 13;
   position: absolute;
   width: 70%;
-  right:1.2vw;
-  height: calc(3 / 1920*100vw);
+  right: 1.2vw;
+  height: calc(3 / 1920 * 100vw);
   background-color: var(--line-color);
 }
 
-.schedule-date-line::before{
+.schedule-date-line::before {
   z-index: 10;
-    content: '';
-    position: absolute;
-    top:-0.3vw;
-    right: -0.05vw;
-    width: calc(13 /1920*100vw);
-    aspect-ratio: 1;
-    border: 1px solid #478196;
-    border-radius: 50%;
-    background-color: #e0edef;
+  content: "";
+  position: absolute;
+  top: -0.3vw;
+  right: -0.05vw;
+  width: calc(13 / 1920 * 100vw);
+  aspect-ratio: 1;
+  border: 1px solid #478196;
+  border-radius: 50%;
+  background-color: #e0edef;
 }
 
-.schedule-date{
+.schedule-date {
   font-family: "Oswald";
-  font-size: calc(55 /1920*100vw);
+  font-size: calc(55 / 1920 * 100vw);
   text-align: right;
   color: #222222;
 }
 
-.schedule-date::before{
+.schedule-date::before {
   content: "Date  ";
-  font-size: calc(30 /1920*100vw);
+  font-size: calc(30 / 1920 * 100vw);
   padding-top: 23px;
   padding-right: 1vw;
 }
 
-.schedule-date-line::after{
+.schedule-date-line::after {
   position: relative;
-  margin-bottom:2vw;
+  margin-bottom: 2vw;
 }
 
-.schedule-content{
+.schedule-content {
   margin-top: 4vw;
 }
 
-.schedule-box{
+.schedule-box {
   position: relative;
   padding: 1vw;
   height: 6vw;
   border-radius: 20px;
   width: 69.5%;
   background-color: #659ea9;
-background-image: url("https://www.transparenttextures.com/patterns/cross-scratches.png");
-/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  background-image: url("https://www.transparenttextures.com/patterns/cross-scratches.png");
   margin-left: auto;
   margin-right: 1.5vw;
-  margin-bottom:2vw;
+  margin-bottom: 2vw;
+  transition: background-color ease 0.3s, box-shadow ease 0.3s;
+  box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.19);
 }
 
-.schedule-box-line{
+.schedule-box:hover {
+  background-color: #b7d2d7;
+  box-shadow: 0px 0px 6px 3px rgba(0, 0, 0, 0.25);
+}
+.schedule-box:hover .schedule-spotname {
+  color: #1c1c1c;
+}
+.schedule-box:hover .schedule-time {
+  color: #1c1c1c;
+}
+
+.schedule-box:hover .schedule-spotimg {
+  filter: brightness(100%);
+}
+
+.schedule-box:hover .schedule-box-line{
+  background-color: #9eced7;
+}
+
+.schedule-box:hover .schedule-box-line::before{
+  border: 1px solid #66a0b6;
+  border-radius: 35%;
+  background-color: #ffffff;
+}
+
+.schedule-box-line {
+  transition: background-color ease 0.3s;
   position: absolute;
-  height: calc(3 /1920*100vw);
+  height: calc(3 / 1920 * 100vw);
   width: 20%;
   background-color: var(--line-color);
-  top:50%;
+  top: 50%;
   right: -5vw;
-  z-index: -1; 
+  z-index: -1;
 }
 
-.schedule-box-line::before{
-    content: '';
-    position: absolute;
-    top:-0.3vw;
-    right: -0.4vw;
-    width: calc(13 /1920*100vw); 
-    aspect-ratio: 1;
-    border: 1px solid #478196; 
-    border-radius: 50%;
-    background-color: #e0edef;
-    z-index: 200;
+.schedule-box-line::before {
+  transition: background-color ease 0.3s,border ease 0.3s,border-radius ease 0.3s;
+  content: "";
+  position: absolute;
+  top: -0.3vw;
+  right: -0.4vw;
+  width: calc(13 / 1920 * 100vw);
+  aspect-ratio: 1;
+  border: 1px solid #478196;
+  border-radius: 50%;
+  background-color: #e0edef;
+  z-index: 200;
 }
 
-.schedule-textarea{
+.schedule-textarea {
   display: flex;
   font-family: "Oswald";
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    font-weight: 500;
-    font-size: calc(40 /1920*100vw);
-    color: #323232;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  font-weight: 500;
+  font-size: calc(40 / 1920 * 100vw);
+  color: #323232;
 }
 
-.schedule-spotimg{
+.schedule-spotimg {
   height: 100%;
   border-radius: 20px;
   aspect-ratio: 1.8;
-  background-color: gray;
+  filter: brightness(90%);
+  transition: filter ease 0.3s;
 }
 
-.schedule-spotname{
+.schedule-spotname {
   width: 50%;
   text-align: left;
   padding-left: 2vw;
+  color: #323232;
 }
 
-.schedule-spotname::before{
+.schedule-spotname::before {
   content: "会場：";
-    font-size: calc(25 /1920*100vw);
-
+  font-size: calc(25 / 1920 * 100vw);
 }
 
-.schedule-time{
+.schedule-time {
   width: 50%;
   text-align: right;
   padding-right: 2vw;
+  color: #323232;
 }
-.schedule-time::before{
-  content: "開演時間";
+.schedule-time::before {
+  content: "⌚開演時間";
   padding-right: 0.5vw;
 }
 
-
-
-#cast-header{
+#cast-header {
   text-align: center;
   margin-top: 8vw;
 }
 
 .cast-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+  display:flex;
   margin: 0 10vw;
-  margin-bottom: 5vw;
+}
+.cast-title{
+  font-family: "Oswald";
+  font-size: 3vw;
 }
 
 .cast-section {
-  background: white;
-  border-radius: 20px;
-  padding: 30px;
-  box-shadow: var(--shadow-light);
-  margin: 0 calc(100 / 1920 * 100vw) 0 calc(50 / 1920 * 100vw);
+  width: 50%;
 }
 
-.cast-section h3 {
-  font-size: calc(33 / 1920 *100vw);
-  font-weight: 600;
-  margin-bottom: 25px;
-  color: var(--accent-blue);
-  text-align: center;
-  padding-bottom: 15px;
-  border-bottom: 2px solid #f0f0f0;
-}
-
-.cast-list {
+.cast-list{
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  flex-wrap: wrap;
+  text-align: left;
 }
 
-.cast-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 0;
-  border-bottom: 1px solid #f5f5f5;
-  transition: all 0.3s ease;
+.cast-item{
+  font-family: "Noto Serif JP";
+  width: 50%;
+  margin-bottom: 5vw;
+  color: #323232;
 }
 
-.cast-item:hover {
-  color: var(--accent-blue);
-  transform: translateX(5px);
-}
-
-.cast-item:last-child {
-  border-bottom: none;
-}
 
 .cast-role {
-  font-weight: 500;
-  font-size: calc(23 / 1920 *100vw);
+  
+  color: #4289a3;
+  font-weight: 400;
+  font-size: 1.5vw;
 }
 
 .cast-name {
-  color: var(--text-secondary);
-  font-size: calc(28 / 1920 *100vw);
+  color: #246c87;
+  font-size: 2vw;
+  font-weight: 600;
+  margin:0;
 }
 
-/* .chara-bottom{
-  height: 100%;
+.fotter{
+  margin-top: 30vw;
+}
+
+.fotter-wrapper{
+  height: 100vh;
   width: 100%;
-  mask-image: url(img/mask_bottom_chara.svg);
-  mask-repeat: repeat;
-  mask-size: 100% 100px;
-  mask-position: bottom center;
-} */
+  background-color: black;
+  display: flex;
+  align-items: center;
+}
+
+.fotter-text{
+  margin: auto;
+  color:wheat;
+  font-size: 60px;
+}
