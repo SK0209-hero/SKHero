@@ -121,5 +121,5 @@ function glitch(element) {
         }, 100)
       }
 
-      const h1 = document.querySelector('.glitch')
-      glitch(h1)
+      const footer = document.querySelector('.glitch')
+      glitch(footer)

@@ -827,7 +827,7 @@ background-image: url("https://www.transparenttextures.com/patterns/otis-redding
 }
 
 .glitch {
-  font-size: max(50px,5vw);
+  font-size: max(25px,5vw);
   color: #f1f1f1;
   transform: skew(var(--skew));
   transform: skew(var(--skew)) scale(var(--scale));
