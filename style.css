@@ -847,7 +847,7 @@ background-image: url("https://www.transparenttextures.com/patterns/otis-redding
     position: absolute;
     left: -2px;
     text-shadow: -5px 0 magenta;
-    background: #191919;
+    background: #000000;
     overflow: hidden;
     top: 0;
     animation: noise-1 3s linear infinite alternate-reverse, glitch 5s 5.05s infinite;
@@ -857,7 +857,7 @@ background-image: url("https://www.transparenttextures.com/patterns/otis-redding
     position: absolute;
     left: 2px;
     text-shadow: -5px 0 lightgreen;
-    background: #191919;
+    background: #000000;
     overflow: hidden;
     top: 0;
     animation: noise-2 3s linear infinite alternate-reverse, glitch 5s 5s infinite;
