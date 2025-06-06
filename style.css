@@ -577,6 +577,7 @@ body {
 
 .cast-section {
   width: 50%;
+  padding: 0 5vw;
 }
 
 .cast-list{
@@ -608,13 +609,24 @@ body {
 }
 
 .fotter{
-  margin-top: 30vw;
+  margin-top: 10vw;
+}
+
+.fotter-wave{
+  width: 100%;
+  margin-bottom: -10px;
+}
+
+.fotter-line{
+  height: 20vh;
+  width: 100%;
+  background-color: #191919;
 }
 
 .fotter-wrapper{
   height: 100vh;
   width: 100%;
-  background-color: black;
+  background-color: #191919;
   display: flex;
   align-items: center;
 }
