@@ -799,299 +799,57 @@ body {
     clip-path: inset(0 0 0 100%);
   }
 }
-footer{
-  display: block;
-  position: relative;
-  height: 100vh;
-  width: 100%;
-}
 .footer-top{
   height: 30vh;
   width: 100%;
   clip-path: polygon(47% 84%, 60% 92%, 75% 84%, 82% 92%, 100% 89%, 100% 100%, 0 100%, 0 87%, 16% 82%, 34% 91%);
-  background-color: #000000;
+  background-color: #191919;
 background-image: url("https://www.transparenttextures.com/patterns/otis-redding.png");
-/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
-.footer-space{
+.footer-middle{
+  margin: -3px;
   height: 20vh;
-  background-color: #000000;
+  background-color: #191919;
 background-image: url("https://www.transparenttextures.com/patterns/otis-redding.png");
 }
-.footer-wrapper{
-  height: 100vh;
+
+footer{
+  font-family: "Oswald";
+  font-style: italic;
+  background-color: #191919;
+background-image: url("https://www.transparenttextures.com/patterns/otis-redding.png");
   width: 100%;
+  height: 100vh;
   display: flex;
   align-items: center;
- background-color: #000000;
-background-image: url("https://www.transparenttextures.com/patterns/otis-redding.png");
-/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-  white-space: nowrap;
-  font-style: italic;
-  
+  justify-content: center;
+  overflow: hidden;
 }
 
-.glitch{
-  margin: auto;
+.glitch {
+  font-size: max(50px,5vw);
+  color: #f1f1f1;
+  transform: skew(var(--skew));
+  transform: skew(var(--skew)) scale(var(--scale));
 }
 
-
-.glitch, .glow {
-    color: #dfbfbf;
-    position: relative;
-    font-size: max(3vw,25px);
-    animation: glitch 5s 5s infinite;
-}
-.glitch::before, .glow::before {
-    content: attr(data-text);
-    position: absolute;
-    left: -2px;
-    text-shadow: -5px 0 magenta;
-    background: #000000;
-    overflow: hidden;
-    top: 0;
-    animation: noise-1 3s linear infinite alternate-reverse, glitch 5s 5.05s infinite;
-}
-.glitch::after, .glow::after {
-    content: attr(data-text);
-    position: absolute;
-    left: 2px;
-    text-shadow: -5px 0 lightgreen;
-    background: #000000;
-    overflow: hidden;
-    top: 0;
-    animation: noise-2 3s linear infinite alternate-reverse, glitch 5s 5s infinite;
-}
-@keyframes glitch {
-    1% {
-        transform: rotateX(10deg) skewX(90deg);
-    }
-    2% {
-        transform: rotateX(0deg) skewX(0deg);
-    }
-}
-@keyframes noise-1 {
-    3.3333333333% {
-        clip-path: inset(50px 0 14px 0);
-    }
-    6.6666666667% {
-        clip-path: inset(28px 0 59px 0);
-    }
-    10% {
-        clip-path: inset(12px 0 70px 0);
-    }
-    13.3333333333% {
-        clip-path: inset(68px 0 32px 0);
-    }
-    16.6666666667% {
-        clip-path: inset(28px 0 64px 0);
-    }
-    20% {
-        clip-path: inset(2px 0 89px 0);
-    }
-    23.3333333333% {
-        clip-path: inset(14px 0 39px 0);
-    }
-    26.6666666667% {
-        clip-path: inset(87px 0 10px 0);
-    }
-    30% {
-        clip-path: inset(13px 0 63px 0);
-    }
-    33.3333333333% {
-        clip-path: inset(46px 0 12px 0);
-    }
-    36.6666666667% {
-        clip-path: inset(47px 0 31px 0);
-    }
-    40% {
-        clip-path: inset(13px 0 33px 0);
-    }
-    43.3333333333% {
-        clip-path: inset(35px 0 4px 0);
-    }
-    46.6666666667% {
-        clip-path: inset(71px 0 18px 0);
-    }
-    50% {
-        clip-path: inset(1px 0 1px 0);
-    }
-    53.3333333333% {
-        clip-path: inset(76px 0 12px 0);
-    }
-    56.6666666667% {
-        clip-path: inset(66px 0 3px 0);
-    }
-    60% {
-        clip-path: inset(51px 0 46px 0);
-    }
-    63.3333333333% {
-        clip-path: inset(77px 0 11px 0);
-    }
-    66.6666666667% {
-        clip-path: inset(28px 0 13px 0);
-    }
-    70% {
-        clip-path: inset(51px 0 20px 0);
-    }
-    73.3333333333% {
-        clip-path: inset(40px 0 20px 0);
-    }
-    76.6666666667% {
-        clip-path: inset(8px 0 76px 0);
-    }
-    80% {
-        clip-path: inset(31px 0 47px 0);
-    }
-    83.3333333333% {
-        clip-path: inset(75px 0 24px 0);
-    }
-    86.6666666667% {
-        clip-path: inset(20px 0 37px 0);
-    }
-    90% {
-        clip-path: inset(24px 0 5px 0);
-    }
-    93.3333333333% {
-        clip-path: inset(53px 0 46px 0);
-    }
-    96.6666666667% {
-        clip-path: inset(33px 0 20px 0);
-    }
-    100% {
-        clip-path: inset(89px 0 1px 0);
-    }
-}
-@keyframes noise-2 {
-    0% {
-        clip-path: inset(16px 0 9px 0);
-    }
-    3.3333333333% {
-        clip-path: inset(98px 0 2px 0);
-    }
-    6.6666666667% {
-        clip-path: inset(75px 0 22px 0);
-    }
-    10% {
-        clip-path: inset(24px 0 13px 0);
-    }
-    13.3333333333% {
-        clip-path: inset(49px 0 25px 0);
-    }
-    16.6666666667% {
-        clip-path: inset(63px 0 4px 0);
-    }
-    20% {
-        clip-path: inset(39px 0 13px 0);
-    }
-    23.3333333333% {
-        clip-path: inset(74px 0 24px 0);
-    }
-    26.6666666667% {
-        clip-path: inset(72px 0 21px 0);
-    }
-    30% {
-        clip-path: inset(84px 0 12px 0);
-    }
-    33.3333333333% {
-        clip-path: inset(8px 0 15px 0);
-    }
-    36.6666666667% {
-        clip-path: inset(58px 0 5px 0);
-    }
-    40% {
-        clip-path: inset(34px 0 32px 0);
-    }
-    43.3333333333% {
-        clip-path: inset(3px 0 66px 0);
-    }
-    46.6666666667% {
-        clip-path: inset(7px 0 76px 0);
-    }
-    50% {
-        clip-path: inset(77px 0 3px 0);
-    }
-    53.3333333333% {
-        clip-path: inset(76px 0 4px 0);
-    }
-    56.6666666667% {
-        clip-path: inset(28px 0 55px 0);
-    }
-    60% {
-        clip-path: inset(99px 0 2px 0);
-    }
-    63.3333333333% {
-        clip-path: inset(83px 0 1px 0);
-    }
-    66.6666666667% {
-        clip-path: inset(96px 0 5px 0);
-    }
-    70% {
-        clip-path: inset(62px 0 29px 0);
-    }
-    73.3333333333% {
-        clip-path: inset(41px 0 41px 0);
-    }
-    76.6666666667% {
-        clip-path: inset(92px 0 1px 0);
-    }
-    80% {
-        clip-path: inset(89px 0 8px 0);
-    }
-    83.3333333333% {
-        clip-path: inset(31px 0 53px 0);
-    }
-    86.6666666667% {
-        clip-path: inset(9px 0 2px 0);
-    }
-    90% {
-        clip-path: inset(58px 0 32px 0);
-    }
-    93.3333333333% {
-        clip-path: inset(51px 0 1px 0);
-    }
-    96.6666666667% {
-        clip-path: inset(80px 0 8px 0);
-    }
-    100% {
-        clip-path: inset(1px 0 88px 0);
-    }
-}
-.scanlines {
-  position: relative;
-    overflow: hidden;
-    mix-blend-mode: difference;
-}
-.scanlines::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    bottom: 0;
-    left: 0;
-    background: repeating-linear-gradient(to bottom, transparent 0%, rgba(255, 255, 255, 0.05) 0.5%, transparent 1%);
-    animation: fudge 7s ease-in-out alternate infinite;
-}
-@keyframes fudge {
-    from {
-        transform: translate(0px, 0px);
-    }
-    to {
-        transform: translate(0px, 2%);
-    }
-}
-.glow {
-    text-shadow: 0 0 1000px #dfbfbf;
-    color: transparent;
-    position: absolute;
-    top: 0;
-}
-@keyframes glitch-2 {
-    1% {
-        transform: rotateX(10deg) skewX(70deg);
-    }
-    2% {
-        transform: rotateX(0deg) skewX(0deg);
-    }
+.glitch::after,
+.glitch::before {
+  content: attr(data-text);
+  position: absolute;
+  width: 100%;
+  transition: clip-path 50ms ease-in;
+  background-color: #191919;
 }
 
+.glitch::before {
+  left: 5px;
+  text-shadow: 2px -2px #2a96d4;
+  clip-path: polygon(0 var(--t1), 100% var(--t1), 100% var(--b1), 0 var(--b1));
+}
+
+.glitch::after {
+  left: -5px;
+  text-shadow: -2px 2px #cc2a1f;
+  clip-path: polygon(0 var(--t2), 100% var(--t2), 100% var(--b2), 0 var(--b2));
+}
