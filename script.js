@@ -31,9 +31,60 @@ buttons.forEach(button => {
 
       //リセット
       ButtonToggle = false;
-    },300);
+    },700);
 
     // 現在のグループを更新
     currentGroup = nextGroup;
   });
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+            // アニメーションを適用したい全ての要素を取得
+            const animatedElements = document.querySelectorAll('.animated-element');
+
+            const observerOptions = {
+                root: null, // ビューポートをルートとして使用
+                rootMargin: '0px', // ルートのマージン（ビューポートの端からどれくらいの距離で発火するか）
+                threshold: 0.9 // 要素の90%が見えたら発火
+            };
+
+            const animatedElements_fast = document.querySelectorAll('.animated-element-fast');
+
+            const observerOptionsForSchedule = {
+                root: null, // ビューポートをルートとして使用
+                rootMargin: '0px', // ルートのマージン（ビューポートの端からどれくらいの距離で発火するか）
+                threshold: 0.1 // 要素の0.5%が見えたら発火
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // 要素がビューポートに入った
+                        entry.target.classList.add('anime-active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // 各要素を監視対象に追加
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+
+            const observer_fast = new IntersectionObserver((entries, observer_fast) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // 要素がビューポートに入った
+                        entry.target.classList.add('anime-active');
+                        observer_fast.unobserve(entry.target);
+                    }
+                });
+            }, observerOptionsForSchedule);
+
+            // 各要素を監視対象に追加
+            animatedElements_fast.forEach(element => {
+                observer_fast.observe(element);
+            });
+        });
+
