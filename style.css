@@ -840,6 +840,8 @@ background-image: url("https://www.transparenttextures.com/patterns/otis-redding
   width: 100%;
   transition: clip-path 50ms ease-in;
   background-color: #191919;
+  
+background-image: url("https://www.transparenttextures.com/patterns/otis-redding.png");
 }
 
 .glitch::before {
