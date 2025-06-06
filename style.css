@@ -839,7 +839,7 @@ background-image: url("https://www.transparenttextures.com/patterns/otis-redding
 .glitch, .glow {
     color: #dfbfbf;
     position: relative;
-    font-size: 3vw;
+    font-size: max(3vw,25px);
     animation: glitch 5s 5s infinite;
 }
 .glitch::before, .glow::before {
