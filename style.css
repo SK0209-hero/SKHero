@@ -719,6 +719,7 @@ body {
   font-family: "Oswald";
   font-size: 3vw;
   opacity: 0;
+  color: #323232;
 }
 
 .cast-title.anime-active{
