@@ -62,6 +62,7 @@ body {
   text-transform: uppercase;
   display: flex;
   justify-content: left;
+  font-size: 70px;
 }
 #intro-title.anime-active{
   --x:0;
@@ -86,7 +87,6 @@ body {
 }
 
 .intro-img {
-  flex: 1;
   width: 50%;
   clip-path: polygon(100% 0, 17% 0, 0 100%, 100% 100%);
   background-position: right center;
@@ -101,16 +101,15 @@ body {
 }
 
 .intro-textarea {
-  flex: 1;
 
-  padding-left: 7.5vw;
+  padding-left: min(5vw,144px);
   width: 50%;
   padding-bottom: 8vw;
 }
 
 .intro-text-content p {
   font-family: "Open Sans", "Lato", sans-serif;
-  font-size: calc(30 / 1920 * 100vw);
+  font-size: 30px;
   line-height: 1.8;
   color: #2c3e50;
   margin-bottom: 1.5em;
@@ -135,14 +134,52 @@ body {
 
 .intro-text-content .question {
   font-style: italic;
-  margin-top: calc(32 / 1920 * 100vw);
-  border-left: calc(5 / 1920 * 100vw) solid #3498db;
-  padding-left: calc(15 / 1920 * 100vw);
+  margin-top: 32px;
+  border-left: 5px solid #3498db;
+  padding-left: 15px;
 }
 
 .intro-section {
   background-color: #ecf0f1;
 }
+
+@media screen and (max-width:1380px) {
+  .intro-img{
+    width: 40%;
+  clip-path: polygon(100% 0, 25% 0, 0 100%, 100% 100%);
+  }
+  .intro-textarea{
+    width: 60%;
+  }
+}
+
+@media screen and (max-width:1160px) {
+  .intro-img{
+    width: 30%;
+  clip-path: polygon(100% 0, 35% 0, 0 100%, 100% 100%);
+  }
+  .intro-textarea{
+    width: 70%;
+  }
+}
+@media screen and (max-width:1010px) {
+  .intro-img{
+    display:none;
+  }
+  .intro-textarea{
+    width: 100%
+  }
+}
+@media screen and (max-width:840px) {
+  .intro-text-content p {
+    font-size: 3.2vw;
+  }
+  #intro-title{
+    font-size:8vw;
+  }
+}
+
+/*CHARACTER*/
 
 .chara-area {
   position: relative;
@@ -167,6 +204,7 @@ body {
   display: flex;
   justify-content: center;
   color: #eaeaea;
+  font-size: 70px;
 }
 #chara-title.anime-active{
   --y:0;
@@ -185,9 +223,9 @@ body {
 
 .chara-container {
   position: relative;
-
-  padding: 0 10vw 0 20vw;
-  height: calc(600 / 1920 * 100vw);
+  padding-right: 10vw;
+  padding-left: 20vw;
+  height: 600px;   /*変更するやつ*/
   margin-bottom: 1.5vw;
   border: #5353535b 2px solid;
   box-shadow: 0px 0px 4px 5px rgba(0, 0, 0, 0.15);
@@ -205,7 +243,7 @@ body {
 .chara-textarea {
   position: relative;
   max-height: 100%;
-  top: calc(75 / 1920 * 100vw);
+  top: 75px; /*変更するやつ calc*/
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -226,25 +264,25 @@ body {
 .chara-real {
   font-style: normal;
   font-weight: 700;
-  font-size: calc(40 / 1920 * 100vw);
-  margin-bottom: calc(5 / 1920 * 100vw);
+  font-size: 40px;  /*変更するやつ*/
+  margin-bottom: 5px; /*変更するやつ*/
 }
 .chara-master::before {
   content: "演者";
-  font-size: calc(17 / 1920 * 100vw);
+  font-size: 17px;  /*変更するやつ*/
 }
 .chara-master {
   font-style: normal;
   font-weight: 400;
-  font-size: calc(25 / 1920 * 100vw);
+  font-size: 25px; /*変更するやつ*/
   line-height: 0;
   margin: 0;
-  padding-top: 10px;
+  padding-top: 10px; 
 }
 .chara-text {
   padding-top: 3vw;
   flex-direction: row;
-  font-size: calc(20 / 1920 * 100vw);
+  font-size: 20px;  /*変更するやつ*/
 }
 .chara-design {
   opacity: 1;
@@ -281,11 +319,11 @@ body {
   position: relative;
   background-color: rgb(88, 88, 88);
   border-radius: 50%;
-  width: calc(100 / 1920 * 100vw);
-  height: calc(100 / 1920 * 100vw);
+  width: 100px;  /*変更するやつ*/
+  aspect-ratio: 1;
   border: rgb(0, 67, 84) 3px double;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
-  margin: 0 calc(20 / 1920 * 100vw);
+  margin: 0 20px;  /*変更するやつ*/
   overflow: hidden;
   transition: background-color 0.3s ease;
   img {
@@ -346,7 +384,7 @@ body {
 .chara-intro {
   position: absolute;
   display: flex;
-  height: calc(600 / 1920 * 100vw);
+  height: 600px; /*変更するやつ*/
   width: 100%;
 }
 
@@ -425,6 +463,103 @@ body {
     animation: clipOutLeft 0.4s ease-in forwards;
 }
 
+@media (max-width: 1400px) {
+    .chara-container {
+        padding-left: 13vw;
+        padding-right: 8vw;
+    }
+    .chara-textarea{
+      margin-left:-2vw;
+    }
+
+    .chara-buttons button{
+      width: 7.1428vw;
+      margin: 0 1vw;
+    }
+
+}
+@media (max-width: 1160px) {
+    .chara-container {
+        padding-left: 8vw;
+        padding-right: 4vw;
+    }
+    .chara-textarea{
+      margin-left:0;
+    }
+
+}
+
+@media (max-width: 1000px) {
+  .chara-wrapper {
+  clip-path: polygon(100% 0, 0 0, 0 100%, 100% 90%);
+  }
+  .chara-intro{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 80vw;
+  }
+  .chara-image{
+  height: 60%;
+  }
+  .chara-textarea{
+    height: 40%;
+    width: 80%;
+    top:0;
+    margin: -10vw 0 0 0;
+  }
+  .chara-name{
+    padding: 0;
+  }
+  .chara-container {
+    height: 80vw;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .chara-real {
+  font-size: 4vw;
+  margin-bottom: 0.5vw; /*変更するやつ*/
+}
+.chara-master::before {
+  font-size: 1.7vw;
+}
+.chara-master {
+  font-size: 2.5vw;
+  padding-top: 1vw; 
+
+}
+.chara-text {
+  font-size: 2vw;
+}
+.chara-buttons{
+  flex-direction: column;
+}
+.chara-button-1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1vw;
+}
+.chara-button-2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.chara-buttons button{
+      width: 10vw;
+      margin: 0 4vw
+    }
+}
+@media screen and (max-width:840px) {
+  #chara-title{
+    font-size:8vw;
+  }
+}
+
+
+
+/*SCHEDULE*/
 #schedule-section {
   height: 75vw;
 }
