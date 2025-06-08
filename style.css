@@ -178,6 +178,14 @@ body {
     font-size:8vw;
   }
 }
+@media screen and (max-width:500px) {
+  .intro-text-content .question{
+    margin-top: 6.4vw;
+    padding-left: 3vw;
+  }
+}
+
+
 
 /*CHARACTER*/
 
@@ -497,7 +505,7 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    height: 80vw;
+    height: 70vw;
   }
   .chara-image{
   height: 60%;
@@ -506,13 +514,13 @@ body {
     height: 40%;
     width: 80%;
     top:0;
-    margin: -10vw 0 0 0;
+    margin: -7vw 0 0 0;
   }
   .chara-name{
     padding: 0;
   }
   .chara-container {
-    height: 80vw;
+    height: 70vw;
         padding-left: 0;
         padding-right: 0;
     }
@@ -547,7 +555,7 @@ body {
   justify-content: center;
 }
 .chara-buttons button{
-      width: 10vw;
+      width: 9vw;
       margin: 0 4vw
     }
 }
@@ -557,9 +565,14 @@ body {
   }
 }
 
+@media screen and (max-width:400px) {
+  .chara-buttons button{
+    width: 10vw;
+      margin: 0 3vw
+    }
+}
 
-
-/*SCHEDULE*/
+/* CHEDUL
 #schedule-section {
   height: 75vw;
 }
@@ -602,7 +615,7 @@ body {
 .schedule-container {
   position: relative;
   padding: 0 7.5vw;
-  height: 50vh; /*test*/
+  height: 50vh; es
 }
 
 .schedule-container-line {
@@ -820,7 +833,345 @@ body {
   content: "⌚開演時間";
   padding-right: 0.5vw;
 }
+ */
+/*書き直し*/
+ #schedule-header {
+  text-align: right;
+  padding-right: 3vw;
+  margin-top: -6vw;
+  margin-bottom: 2.5vw;
+}
 
+#schedule-title{
+  text-transform: uppercase;
+  display: flex;
+  justify-content: right;
+  font-size: 70px;
+}
+#schedule-title.anime-active{
+  --x2:0;
+}
+
+.schedule-anime {
+    overflow: hidden;
+}
+
+.schedule-anime-text {
+  display: inline-block;
+  transform: translateX(var(--x2,101%));
+  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition-delay: calc(0.05s * var(--schedule-anime-index));
+}
+
+.schedule-line{
+  padding-right: 3vw;
+  position: absolute;
+  top:0;
+  right: 0;
+  height: 100%;
+  border-left: var(--line-color) solid;
+  box-sizing: content-box;
+}
+.schedule-line::before,
+.schedule-line::after {
+  z-index: 15;
+  content: "";
+  position: absolute;
+  transform: translateX(-50%);
+  width: 20px;
+  aspect-ratio: 1;
+  border: 3px solid #3d7082;
+  border-radius: 50%;
+  background-color: #ececec;
+}
+
+.schedule-line::after {
+  bottom: 0;
+  transform: translate(-50%, 50%);
+}
+.schedule-line::before {
+  top: 0;
+  transform: translate(-50%, -50%);
+}
+
+.schedule-area{
+  position: relative;
+  height: auto;
+  width: 100%;
+}
+.schedule-area-padding{
+  padding: 3vw;
+  text-align: right;
+}
+
+.schedule-date{
+  text-align: right;
+  padding-right: 2.5vw;
+  font-family: "Oswald";
+  font-size: 55px;
+}
+.schedule-date::before {
+  content: "Date  ";
+  font-size: 30px;
+  padding-top: 23px;
+  padding-right: 1vw;
+}
+
+.schedule-date-line {
+  display: inline-block;
+  position: relative;
+  z-index: 13;
+  width: 70%;
+  height: 3px;
+  background-color: var(--line-color);
+}
+
+
+.schedule-date-line::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(50%, -50%);
+  width: 13px;
+  aspect-ratio: 1;
+  border: 1px solid #478196;
+  border-radius: 50%;
+  background-color: #e0edef;
+  z-index: 10;
+}
+
+.schedule-content-wrap{
+  margin: 50px 0;
+  display: inline-block;
+  width: 70%;
+}
+.schedule-content{
+  display: flex;
+}
+.schedule-box{
+  width: 90%;
+  height: 115px;
+  background-color: #659ea9;
+  background-image: url("https://www.transparenttextures.com/patterns/cross-scratches.png");
+  border-radius: 20px;
+  box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.19);
+  display: flex;
+  padding: 10px;
+}
+.schedule-box-line{
+  position: relative;
+  width: 10%;
+  height: 3px;
+  background-color: var(--line-color);
+  margin: auto 0;
+}
+.schedule-box-line::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(50%, -50%);
+  width: 13px;
+  aspect-ratio: 1;
+  border: 1px solid #478196;
+  border-radius: 50%;
+  background-color: #e0edef;
+  z-index: 10;
+}
+.schedule-textarea {
+  display: flex;
+  font-family: "Oswald";
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  font-weight: 500;
+  font-size: calc(40 / 1920 * 100vw);
+  color: #323232;
+}
+
+.schedule-spotimg {
+  height: 100%;
+  border-radius: 20px;
+  aspect-ratio: 1.8;
+  filter: brightness(90%);
+  transition: filter ease 0.3s;
+}
+
+.schedule-spotname {
+  color:#323232;
+  font-weight: 500;
+  font-family: "Oswald";
+  width: 50%;
+  text-align: left;
+  margin: auto 0;
+  padding-left: 2vw;
+  color: #323232;
+  font-size: 50px;
+}
+
+.schedule-spotname::before {
+  content: "会場：";
+  font-size: 30px;
+}
+
+
+.schedule-time {
+  color:#323232;
+  font-weight: 500;
+  font-family: "Oswald";
+  margin: auto 0;
+  width: 50%;
+  text-align: right;
+  padding-right: 2vw;
+  color: #323232;
+  font-size: 50px;
+}
+.schedule-time::before {
+  content: "⌚開演時間";
+  padding-right: 0.5vw;
+  font-size: 40px;
+}
+
+@media screen and (max-width:1710px) {
+  .schedule-content-wrap{
+    width: 75%;
+  }
+  .schedule-date-line{
+    width: 75%;
+  }
+}
+@media screen and (max-width:1590px) {
+  .schedule-content-wrap{
+    width: 80%;
+  }
+  .schedule-date-line{
+    width: 80%;
+  }
+}
+@media screen and (max-width:1480px) {
+  .schedule-content-wrap{
+    width: 85%;
+  }
+  .schedule-date-line{
+    width: 85%;
+  }
+}
+@media screen and (max-width:1390px) {
+  .schedule-content-wrap{
+    width: 90%;
+  }
+  .schedule-date-line{
+    width: 90%;
+  }
+}
+
+@media screen and (max-width:1310px) {
+  .schedule-content-wrap{
+    width: 95%;
+  }
+  .schedule-date-line{
+    width: 95%;
+  }
+}
+
+@media screen and (max-width:1240px) {
+  .schedule-spotname{
+    font-size: 3.822vw;
+  }
+  .schedule-spotname::before{
+    font-size: 2.2193vw;
+  }
+  .schedule-time{
+    font-size: 3.8322vw;
+  }
+  .schedule-time::before{
+    font-size: 3.0258vw;
+  }
+  @media screen and (max-width:1050px) {
+  .schedule-spotname{
+    font-size: 3.622vw;
+  }
+  .schedule-spotname::before{
+    font-size: 2.0193vw;
+  }
+  .schedule-time{
+    font-size: 3.6322vw;
+  }
+  .schedule-time::before{
+    font-size: 2.8258vw;
+  }
+
+  .schedule-spotimg{
+    width: 30%;
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width:930px) {
+  .schedule-spotimg{
+    width: 25%;
+    object-fit: cover;
+  }
+  .schedule-box{
+    height: 12vw;
+  }
+
+}
+
+@media screen and (max-width:840px) {
+  #schedule-title{
+    font-size:8vw;
+  }
+  .schedule-date{
+    font-size: 6.3vw;
+  }
+  .schedule-date::before{
+    font-size: 3.3vw;
+  }
+  .schedule-content-wrap{
+  margin: 5.7vw 0;
+  }
+  .schedule-date-line::before{
+  width: 1.3vw;
+  }
+  .schedule-box-line::before {
+  width: 1.3vw;
+}
+.schedule-line::after,
+.schedule-line::before{
+  width: 2.1vw;
+  
+  border: 0.357vw solid #3d7082;
+}
+}
+
+@media screen and (max-width:490px) {
+  .schedule-spotimg{
+    width: 20%;
+    object-fit: cover;
+  }
+}
+@media screen and (max-width:400px) {
+  .schedule-date-line::before{
+    right: 0.2vw;
+  }
+  .schedule-box-line::before {
+    right: 0.2vw;
+}
+.schedule-line::after,
+.schedule-line::before{
+    right: 0.2vw;
+}
+}
+@media screen and (max-width:280px) {
+  .schedule-spotimg{
+    width: 15%;
+    object-fit: cover;
+  }
+}
+
+/*CAST&STAFF*/
 #cast-header {
   text-align: center;
   margin-top: 8vw;
