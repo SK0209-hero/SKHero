@@ -23,7 +23,6 @@
   --light-pulse-color: rgba(255, 255, 255, 0.2); /* 光の脈動の色 */
   --light-pulse-duration: 2s; /* 光の脈動のアニメーション時間 */
 }
-
 body {
   margin: 0;
   overflow-x: hidden;
@@ -31,16 +30,60 @@ body {
   background-color: #ffffff;
   background-image: url("img/background.png");
 }
+body.no-scroll {
+    overflow: hidden;
+}
 .area-poster {
-  height: 100vh;
-  width: 100%;
-  background-color: red;
+  position: relative;
+  display: flex;
 }
 
 .area-poster img {
   width: 100%;
   height: auto;
+  display: block;
 }
+.poster-textarea{
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  display: block;
+  text-align: center;
+  letter-spacing: 0.5vw;
+  position: absolute;
+  writing-mode: vertical-rl;
+  left: 43.5%;
+  top:7%;
+  font-size: 9vw;
+  font-family: "Zen Antique Soft", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+@media screen and (max-width:440px) {
+  .poster-text{
+  font-size: 8.5vw;
+  }
+}
+@media screen and (max-width:180px) {
+  .poster-text{
+  font-size: 8.3vw;
+  }
+}
+
+.poster-textarea .poster-anime {
+    display: inline-block;
+    opacity: 0;
+    transform: scale(1.3);
+    /* ここからtransitionプロパティを削除！ */
+    /* transition: opacity 0.6s ease-out, transform 0.6s ease-out; */
+}
+
+/* アニメーション後の状態 (JavaScriptでクラス追加) */
+.poster-textarea.is-animated .poster-anime {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
 
 .section {
   width: 100%;
@@ -1212,6 +1255,10 @@ body {
 }
 
 @media screen and (max-width: 840px) {
+  
+  .schedule-date{
+    margin-bottom: -1vw;
+  }
   #schedule-title {
     font-size: 8vw;
   }
@@ -1253,6 +1300,10 @@ body {
     width: 20%;
     object-fit: cover;
   }
+  
+  .schedule-date{
+    margin-bottom: -2vw;
+  }
 }
 @media screen and (max-width: 400px) {
   .schedule-date-line::before {
@@ -1270,6 +1321,15 @@ body {
   .schedule-spotimg {
     width: 15%;
     object-fit: cover;
+  }
+  
+  .schedule-date{
+    margin-bottom: -3vw;
+  }
+}
+@media screen and (max-width: 210px) {
+  .schedule-time::before{
+    content: "開演時間";
   }
 }
 
@@ -1460,7 +1520,8 @@ body {
   background-image: url("https://www.transparenttextures.com/patterns/otis-redding.png");
 }
 .footer-middle {
-  margin: -3px;
+  width: 100%;
+  margin: -3px 0;
   height: 20vh;
   background-color: #191919;
   background-image: url("https://www.transparenttextures.com/patterns/otis-redding.png");
