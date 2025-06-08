@@ -291,6 +291,9 @@ body {
   padding-top: 3vw;
   flex-direction: row;
   font-size: 20px;  /*変更するやつ*/
+  white-space: normal;   /* 折り返し許可 */
+  overflow: visible;     /* はみ出し許可 */
+  min-width: 0;     
 }
 .chara-design {
   opacity: 1;
@@ -505,7 +508,7 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    height: 70vw;
+    height: 75vw;
   }
   .chara-image{
   height: 60%;
@@ -514,13 +517,13 @@ body {
     height: 40%;
     width: 80%;
     top:0;
-    margin: -7vw 0 0 0;
+    margin: -6vw 0 0 0;
   }
   .chara-name{
     padding: 0;
   }
   .chara-container {
-    height: 70vw;
+    height: 75vw;
         padding-left: 0;
         padding-right: 0;
     }
@@ -869,7 +872,7 @@ body {
   top:0;
   right: 0;
   height: 100%;
-  border-left: var(--line-color) solid;
+  border-left: 3px var(--line-color) solid;
   box-sizing: content-box;
 }
 .schedule-line::before,
@@ -1088,6 +1091,7 @@ body {
   .schedule-time::before{
     font-size: 3.0258vw;
   }
+}
   @media screen and (max-width:1050px) {
   .schedule-spotname{
     font-size: 3.622vw;
@@ -1131,6 +1135,16 @@ body {
   }
   .schedule-content-wrap{
   margin: 5.7vw 0;
+  }
+
+  .schedule-line{
+    border-width: 0.33714vw;
+  }
+  .schedule-date-line{
+    height:  0.33714vw;
+  }
+  .schedule-box-line{
+    height: 0.33714vw;
   }
   .schedule-date-line::before{
   width: 1.3vw;
@@ -1340,5 +1354,4 @@ background-image: url("https://www.transparenttextures.com/patterns/otis-redding
 .glitch::after {
   left: -5px;
   text-shadow: -2px 2px #cc2a1f;
-  clip-path: polygon(0 var(--t2), 100% var(--t2), 100% var(--b2), 0 var(--b2));
-}
+  clip-path: polygon(0 var(--t2), 100% var(--t2), 100% var(--b2), 0 var(--b2));}
