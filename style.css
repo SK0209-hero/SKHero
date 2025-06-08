@@ -1412,6 +1412,7 @@ body.no-scroll {
   color: #4289a3;
   font-weight: 400;
   font-size: 28.8px;
+  white-space: nowrap;
 }
 
 .cast-name {
@@ -1419,6 +1420,7 @@ body.no-scroll {
   font-size: 38.4px;
   font-weight: 600;
   margin: 0;
+  white-space: nowrap;
 }
 
 @media screen and (max-width: 840px) {
