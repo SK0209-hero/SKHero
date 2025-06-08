@@ -12,13 +12,13 @@
   --shadow-light: 0 10px 30px rgba(0, 0, 0, 0.1);
   --shadow-heavy: 0 20px 60px rgba(0, 0, 0, 0.15);
   --line-color: #7ab3bf;
-  --glitch-text-color: #ECF0F1; /* 明るい色 */
-  --glitch-shadow-color1: #E74C3C; /* 赤系 */
-  --glitch-shadow-color2: #3498DB; /* 青系 */
-  --glitch-shadow-color3: #9B59B6; /* 紫系 */
+  --glitch-text-color: #ecf0f1; /* 明るい色 */
+  --glitch-shadow-color1: #e74c3c; /* 赤系 */
+  --glitch-shadow-color2: #3498db; /* 青系 */
+  --glitch-shadow-color3: #9b59b6; /* 紫系 */
 
-  --glitch-speed: 0.05s;  /* グリッチアニメーションの1ステップあたりの速さ */
-  --glitch-amount: 3px;   /* グリッチのずれ幅 */
+  --glitch-speed: 0.05s; /* グリッチアニメーションの1ステップあたりの速さ */
+  --glitch-amount: 3px; /* グリッチのずれ幅 */
 
   --light-pulse-color: rgba(255, 255, 255, 0.2); /* 光の脈動の色 */
   --light-pulse-duration: 2s; /* 光の脈動のアニメーション時間 */
@@ -58,23 +58,23 @@ body {
   margin-top: 1vw;
 }
 
-#intro-title{
+#intro-title {
   text-transform: uppercase;
   display: flex;
   justify-content: left;
   font-size: 70px;
 }
-#intro-title.anime-active{
-  --x:0;
+#intro-title.anime-active {
+  --x: 0;
 }
 
 .intro-anime {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .intro-anime-text {
   display: inline-block;
-  transform: translateX(var(--x,-101%));
+  transform: translateX(var(--x, -101%));
   transition: transform 0.3s cubic-bezier(0.77, 0, 0.175, 1);
   transition-delay: calc(0.05s * var(--intro-anime-index));
 }
@@ -101,8 +101,7 @@ body {
 }
 
 .intro-textarea {
-
-  padding-left: min(5vw,144px);
+  padding-left: min(5vw, 144px);
   width: 50%;
   padding-bottom: 8vw;
 }
@@ -143,49 +142,47 @@ body {
   background-color: #ecf0f1;
 }
 
-@media screen and (max-width:1380px) {
-  .intro-img{
+@media screen and (max-width: 1380px) {
+  .intro-img {
     width: 40%;
-  clip-path: polygon(100% 0, 25% 0, 0 100%, 100% 100%);
+    clip-path: polygon(100% 0, 25% 0, 0 100%, 100% 100%);
   }
-  .intro-textarea{
+  .intro-textarea {
     width: 60%;
   }
 }
 
-@media screen and (max-width:1160px) {
-  .intro-img{
+@media screen and (max-width: 1160px) {
+  .intro-img {
     width: 30%;
-  clip-path: polygon(100% 0, 35% 0, 0 100%, 100% 100%);
+    clip-path: polygon(100% 0, 35% 0, 0 100%, 100% 100%);
   }
-  .intro-textarea{
+  .intro-textarea {
     width: 70%;
   }
 }
-@media screen and (max-width:1010px) {
-  .intro-img{
-    display:none;
+@media screen and (max-width: 1010px) {
+  .intro-img {
+    display: none;
   }
-  .intro-textarea{
-    width: 100%
+  .intro-textarea {
+    width: 100%;
   }
 }
-@media screen and (max-width:840px) {
+@media screen and (max-width: 840px) {
   .intro-text-content p {
     font-size: 3.2vw;
   }
-  #intro-title{
-    font-size:8vw;
+  #intro-title {
+    font-size: 8vw;
   }
 }
-@media screen and (max-width:500px) {
-  .intro-text-content .question{
+@media screen and (max-width: 500px) {
+  .intro-text-content .question {
     margin-top: 6.4vw;
     padding-left: 3vw;
   }
 }
-
-
 
 /*CHARACTER*/
 
@@ -207,24 +204,24 @@ body {
     linear-gradient(to bottom, #126f6f, rgb(50, 146, 146));
 }
 
-#chara-title{
+#chara-title {
   text-transform: uppercase;
   display: flex;
   justify-content: center;
   color: #eaeaea;
   font-size: 70px;
 }
-#chara-title.anime-active{
-  --y:0;
+#chara-title.anime-active {
+  --y: 0;
 }
 
 .chara-anime {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .chara-anime-text {
   display: inline-block;
-  transform: translateY(var(--y,-101%));
+  transform: translateY(var(--y, -101%));
   transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
   transition-delay: calc(0.05s * var(--chara-anime-index));
 }
@@ -233,7 +230,7 @@ body {
   position: relative;
   padding-right: 10vw;
   padding-left: 20vw;
-  height: 600px;   /*変更するやつ*/
+  height: 600px; /*変更するやつ*/
   margin-bottom: 1.5vw;
   border: #5353535b 2px solid;
   box-shadow: 0px 0px 4px 5px rgba(0, 0, 0, 0.15);
@@ -272,12 +269,12 @@ body {
 .chara-real {
   font-style: normal;
   font-weight: 700;
-  font-size: 40px;  /*変更するやつ*/
+  font-size: 40px; /*変更するやつ*/
   margin-bottom: 5px; /*変更するやつ*/
 }
 .chara-master::before {
   content: "演者";
-  font-size: 17px;  /*変更するやつ*/
+  font-size: 17px; /*変更するやつ*/
 }
 .chara-master {
   font-style: normal;
@@ -285,15 +282,15 @@ body {
   font-size: 25px; /*変更するやつ*/
   line-height: 0;
   margin: 0;
-  padding-top: 10px; 
+  padding-top: 10px;
 }
 .chara-text {
   padding-top: 3vw;
   flex-direction: row;
-  font-size: 20px;  /*変更するやつ*/
-  white-space: normal;   /* 折り返し許可 */
-  overflow: visible;     /* はみ出し許可 */
-  min-width: 0;     
+  font-size: 20px; /*変更するやつ*/
+  white-space: normal; /* 折り返し許可 */
+  overflow: visible; /* はみ出し許可 */
+  min-width: 0;
 }
 .chara-design {
   opacity: 1;
@@ -330,11 +327,11 @@ body {
   position: relative;
   background-color: rgb(88, 88, 88);
   border-radius: 50%;
-  width: 100px;  /*変更するやつ*/
+  width: 100px; /*変更するやつ*/
   aspect-ratio: 1;
   border: rgb(0, 67, 84) 3px double;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
-  margin: 0 20px;  /*変更するやつ*/
+  margin: 0 20px; /*変更するやつ*/
   overflow: hidden;
   transition: background-color 0.3s ease;
   img {
@@ -400,179 +397,212 @@ body {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeOut {
-    from { opacity: 1; }
-    to { opacity: 0; }
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 @keyframes clipInTop {
-    from { clip-path: inset(100% 0 0 0); opacity: 0; }
-    50%{ opacity: 1;}
-    to { clip-path: inset(0 0 0 0); opacity: 1; }
+  from {
+    clip-path: inset(100% 0 0 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
 }
 
 @keyframes clipOutDown {
-    from { clip-path: inset(0 0 0 0); opacity: 1; }
-    50%{ opacity: 1;}
-    to { clip-path: inset(100% 0 0 0); opacity: 0; }
+  from {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    clip-path: inset(100% 0 0 0);
+    opacity: 0;
+  }
 }
 
 @keyframes clipInRight {
-    from { clip-path: inset(0 100% 0 0); opacity: 0; }
-    50%{ opacity: 1;}
-    to { clip-path: inset(0 0 0 0); opacity: 1; }
+  from {
+    clip-path: inset(0 100% 0 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
 }
 
 @keyframes clipOutLeft {
-    from { clip-path: inset(0 0 0 0); opacity: 1; }
-    50%{ opacity: 1;}
-    to { clip-path: inset(0 100% 0 0); opacity: 0; }
+  from {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    clip-path: inset(0 100% 0 0);
+    opacity: 0;
+  }
 }
 
-.chara-show{
+.chara-show {
   opacity: 1;
 }
 
-
 .chara-group {
-    visibility: hidden; 
-    opacity: 0; 
-    
+  visibility: hidden;
+  opacity: 0;
 }
 
 .chara-group.chara-show {
-    visibility: visible;
-    opacity: 1; 
-    transition: visibility 0s 0s, opacity 0s 0s;
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s 0s, opacity 0s 0s;
 }
-
 
 .chara-group.chara-hide {
-    visibility: visible;
-    opacity: 1;
-    pointer-events: none;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: none;
 }
 
-
 .chara-group.chara-show .chara-image {
-    opacity: 0;
-    animation: clipInTop 0.4s ease-out forwards;
+  opacity: 0;
+  animation: clipInTop 0.4s ease-out forwards;
 }
 
 .chara-group.chara-show .chara-textarea {
-    opacity: 0;
-    animation: clipInRight 0.4s ease-out forwards;
+  opacity: 0;
+  animation: clipInRight 0.4s ease-out forwards;
 }
 .chara-group.chara-hide .chara-image {
-    animation: clipOutDown 0.4s ease-in forwards;
+  animation: clipOutDown 0.4s ease-in forwards;
 }
 .chara-group.chara-hide .chara-textarea {
-    animation: clipOutLeft 0.4s ease-in forwards;
+  animation: clipOutLeft 0.4s ease-in forwards;
 }
 
 @media (max-width: 1400px) {
-    .chara-container {
-        padding-left: 13vw;
-        padding-right: 8vw;
-    }
-    .chara-textarea{
-      margin-left:-2vw;
-    }
+  .chara-container {
+    padding-left: 13vw;
+    padding-right: 8vw;
+  }
+  .chara-textarea {
+    margin-left: -2vw;
+  }
 
-    .chara-buttons button{
-      width: 7.1428vw;
-      margin: 0 1vw;
-    }
-
+  .chara-buttons button {
+    width: 7.1428vw;
+    margin: 0 1vw;
+  }
 }
 @media (max-width: 1160px) {
-    .chara-container {
-        padding-left: 8vw;
-        padding-right: 4vw;
-    }
-    .chara-textarea{
-      margin-left:0;
-    }
-
+  .chara-container {
+    padding-left: 8vw;
+    padding-right: 4vw;
+  }
+  .chara-textarea {
+    margin-left: 0;
+  }
 }
 
 @media (max-width: 1000px) {
   .chara-wrapper {
-  clip-path: polygon(100% 0, 0 0, 0 100%, 100% 90%);
+    clip-path: polygon(100% 0, 0 0, 0 100%, 100% 90%);
   }
-  .chara-intro{
+  .chara-intro {
     flex-direction: column;
     align-items: center;
     text-align: center;
     height: 75vw;
   }
-  .chara-image{
-  height: 60%;
+  .chara-image {
+    height: 60%;
   }
-  .chara-textarea{
+  .chara-textarea {
     height: 40%;
     width: 80%;
-    top:0;
+    top: 0;
     margin: -6vw 0 0 0;
   }
-  .chara-name{
+  .chara-name {
     padding: 0;
   }
   .chara-container {
     height: 75vw;
-        padding-left: 0;
-        padding-right: 0;
-    }
+    padding-left: 0;
+    padding-right: 0;
+  }
 
-    .chara-real {
-  font-size: 4vw;
-  margin-bottom: 0.5vw; /*変更するやつ*/
+  .chara-real {
+    font-size: 4vw;
+    margin-bottom: 0.5vw; /*変更するやつ*/
+  }
+  .chara-master::before {
+    font-size: 1.7vw;
+  }
+  .chara-master {
+    font-size: 2.5vw;
+    padding-top: 1vw;
+  }
+  .chara-text {
+    font-size: 2vw;
+  }
+  .chara-buttons {
+    flex-direction: column;
+  }
+  .chara-button-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1vw;
+  }
+  .chara-button-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .chara-buttons button {
+    width: 9vw;
+    margin: 0 4vw;
+  }
 }
-.chara-master::before {
-  font-size: 1.7vw;
-}
-.chara-master {
-  font-size: 2.5vw;
-  padding-top: 1vw; 
-
-}
-.chara-text {
-  font-size: 2vw;
-}
-.chara-buttons{
-  flex-direction: column;
-}
-.chara-button-1{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1vw;
-}
-.chara-button-2{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.chara-buttons button{
-      width: 9vw;
-      margin: 0 4vw
-    }
-}
-@media screen and (max-width:840px) {
-  #chara-title{
-    font-size:8vw;
+@media screen and (max-width: 840px) {
+  #chara-title {
+    font-size: 8vw;
   }
 }
 
-@media screen and (max-width:400px) {
-  .chara-buttons button{
+@media screen and (max-width: 400px) {
+  .chara-buttons button {
     width: 10vw;
-      margin: 0 3vw
-    }
+    margin: 0 3vw;
+  }
 }
 
 /* CHEDUL
@@ -838,38 +868,39 @@ body {
 }
  */
 /*書き直し*/
- #schedule-header {
+#schedule-header {
   text-align: right;
   padding-right: 3vw;
   margin-top: -6vw;
   margin-bottom: 2.5vw;
 }
 
-#schedule-title{
+#schedule-title {
   text-transform: uppercase;
   display: flex;
   justify-content: right;
   font-size: 70px;
 }
-#schedule-title.anime-active{
-  --x2:0;
+#schedule-title.anime-active {
+  --x2: 0;
 }
 
 .schedule-anime {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .schedule-anime-text {
   display: inline-block;
-  transform: translateX(var(--x2,101%));
+  transform: translateX(var(--x2, 101%));
   transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
   transition-delay: calc(0.05s * var(--schedule-anime-index));
 }
 
-.schedule-line{
+.schedule-line {
+  opacity: 0;
   padding-right: 3vw;
   position: absolute;
-  top:0;
+  top: 0;
   right: 0;
   height: 100%;
   border-left: 3px var(--line-color) solid;
@@ -897,17 +928,18 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.schedule-area{
+.schedule-area {
   position: relative;
   height: auto;
   width: 100%;
 }
-.schedule-area-padding{
+.schedule-area-padding {
   padding: 3vw;
   text-align: right;
 }
 
-.schedule-date{
+.schedule-date {
+  opacity: 0;
   text-align: right;
   padding-right: 2.5vw;
   font-family: "Oswald";
@@ -921,6 +953,7 @@ body {
 }
 
 .schedule-date-line {
+  opacity: 0;
   display: inline-block;
   position: relative;
   z-index: 13;
@@ -928,7 +961,6 @@ body {
   height: 3px;
   background-color: var(--line-color);
 }
-
 
 .schedule-date-line::before {
   content: "";
@@ -944,15 +976,17 @@ body {
   z-index: 10;
 }
 
-.schedule-content-wrap{
+.schedule-content-wrap {
+  
+  opacity: 0;
   margin: 50px 0;
   display: inline-block;
   width: 70%;
 }
-.schedule-content{
+.schedule-content {
   display: flex;
 }
-.schedule-box{
+.schedule-box {
   width: 90%;
   height: 115px;
   background-color: #659ea9;
@@ -961,8 +995,9 @@ body {
   box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.19);
   display: flex;
   padding: 10px;
+  transition: background-color ease 0.3s, box-shadow ease 0.3s;
 }
-.schedule-box-line{
+.schedule-box-line {
   position: relative;
   width: 10%;
   height: 3px;
@@ -1002,7 +1037,7 @@ body {
 }
 
 .schedule-spotname {
-  color:#323232;
+  color: #323232;
   font-weight: 500;
   font-family: "Oswald";
   width: 50%;
@@ -1018,9 +1053,8 @@ body {
   font-size: 30px;
 }
 
-
 .schedule-time {
-  color:#323232;
+  color: #323232;
   font-weight: 500;
   font-family: "Oswald";
   margin: auto 0;
@@ -1036,150 +1070,204 @@ body {
   font-size: 40px;
 }
 
-@media screen and (max-width:1710px) {
-  .schedule-content-wrap{
+.schedule-box:hover {
+  background-color: #b7d2d7;
+  box-shadow: 0px 0px 6px 3px rgba(0, 0, 0, 0.25);
+}
+.schedule-box:hover .schedule-spotname {
+  color: #1c1c1c;
+}
+.schedule-box:hover .schedule-time {
+  color: #1c1c1c;
+}
+
+.schedule-box:hover .schedule-spotimg {
+  filter: brightness(100%);
+}
+
+.schedule-box:hover .schedule-box-line{
+  background-color: #9eced7;
+}
+
+.schedule-box:hover .schedule-box-line::before{
+  border: 1px solid #66a0b6;
+  border-radius: 35%;
+  background-color: #ffffff;
+}
+
+.schedule-content-wrap.anime-active{
+  animation: fadeIn ease 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  from{opacity: 0;}
+  to{opacity: 1;}
+}
+.schedule-date.anime-active{
+  animation: fadeInSlideUp ease 0.5s forwards;
+}
+.schedule-date-line.anime-active{
+  animation: fadeInSlideUp ease 0.5s forwards;
+}
+
+@keyframes fadeInSlideUp {
+  from{transform: translateY(20px);opacity: 0;}
+  to{transform: translateY(0px);opacity: 1;}
+}
+
+.schedule-line.anime-active{
+  animation: fadeInSlideLeft ease 0.3s forwards;
+}
+
+@keyframes fadeInSlideLeft {
+  from{transform: translateX(30px);opacity: 0;}
+  to{transform: translateX(0px);opacity: 1;}
+}
+
+
+@media screen and (max-width: 1710px) {
+  .schedule-content-wrap {
     width: 75%;
   }
-  .schedule-date-line{
+  .schedule-date-line {
     width: 75%;
   }
 }
-@media screen and (max-width:1590px) {
-  .schedule-content-wrap{
+@media screen and (max-width: 1590px) {
+  .schedule-content-wrap {
     width: 80%;
   }
-  .schedule-date-line{
+  .schedule-date-line {
     width: 80%;
   }
 }
-@media screen and (max-width:1480px) {
-  .schedule-content-wrap{
+@media screen and (max-width: 1480px) {
+  .schedule-content-wrap {
     width: 85%;
   }
-  .schedule-date-line{
+  .schedule-date-line {
     width: 85%;
   }
 }
-@media screen and (max-width:1390px) {
-  .schedule-content-wrap{
+@media screen and (max-width: 1390px) {
+  .schedule-content-wrap {
     width: 90%;
   }
-  .schedule-date-line{
+  .schedule-date-line {
     width: 90%;
   }
 }
 
-@media screen and (max-width:1310px) {
-  .schedule-content-wrap{
+@media screen and (max-width: 1310px) {
+  .schedule-content-wrap {
     width: 95%;
   }
-  .schedule-date-line{
+  .schedule-date-line {
     width: 95%;
   }
 }
 
-@media screen and (max-width:1240px) {
-  .schedule-spotname{
+@media screen and (max-width: 1240px) {
+  .schedule-spotname {
     font-size: 3.822vw;
   }
-  .schedule-spotname::before{
+  .schedule-spotname::before {
     font-size: 2.2193vw;
   }
-  .schedule-time{
+  .schedule-time {
     font-size: 3.8322vw;
   }
-  .schedule-time::before{
+  .schedule-time::before {
     font-size: 3.0258vw;
   }
 }
-  @media screen and (max-width:1050px) {
-  .schedule-spotname{
+@media screen and (max-width: 1050px) {
+  .schedule-spotname {
     font-size: 3.622vw;
   }
-  .schedule-spotname::before{
+  .schedule-spotname::before {
     font-size: 2.0193vw;
   }
-  .schedule-time{
+  .schedule-time {
     font-size: 3.6322vw;
   }
-  .schedule-time::before{
+  .schedule-time::before {
     font-size: 2.8258vw;
   }
 
-  .schedule-spotimg{
+  .schedule-spotimg {
     width: 30%;
     object-fit: cover;
   }
 }
 
-@media screen and (max-width:930px) {
-  .schedule-spotimg{
+@media screen and (max-width: 930px) {
+  .schedule-spotimg {
     width: 25%;
     object-fit: cover;
   }
-  .schedule-box{
+  .schedule-box {
     height: 12vw;
   }
-
 }
 
-@media screen and (max-width:840px) {
-  #schedule-title{
-    font-size:8vw;
+@media screen and (max-width: 840px) {
+  #schedule-title {
+    font-size: 8vw;
   }
-  .schedule-date{
+  .schedule-date {
     font-size: 6.3vw;
   }
-  .schedule-date::before{
+  .schedule-date::before {
     font-size: 3.3vw;
   }
-  .schedule-content-wrap{
-  margin: 5.7vw 0;
+  .schedule-content-wrap {
+    margin: 5.7vw 0;
   }
 
-  .schedule-line{
+  .schedule-line {
     border-width: 0.33714vw;
   }
-  .schedule-date-line{
-    height:  0.33714vw;
-  }
-  .schedule-box-line{
+  .schedule-date-line {
     height: 0.33714vw;
   }
-  .schedule-date-line::before{
-  width: 1.3vw;
+  .schedule-box-line {
+    height: 0.33714vw;
+  }
+  .schedule-date-line::before {
+    width: 1.3vw;
   }
   .schedule-box-line::before {
-  width: 1.3vw;
-}
-.schedule-line::after,
-.schedule-line::before{
-  width: 2.1vw;
-  
-  border: 0.357vw solid #3d7082;
-}
+    width: 1.3vw;
+  }
+  .schedule-line::after,
+  .schedule-line::before {
+    width: 2.1vw;
+
+    border: 0.357vw solid #3d7082;
+  }
 }
 
-@media screen and (max-width:490px) {
-  .schedule-spotimg{
+@media screen and (max-width: 490px) {
+  .schedule-spotimg {
     width: 20%;
     object-fit: cover;
   }
 }
-@media screen and (max-width:400px) {
-  .schedule-date-line::before{
+@media screen and (max-width: 400px) {
+  .schedule-date-line::before {
     right: 0.2vw;
   }
   .schedule-box-line::before {
     right: 0.2vw;
-}
-.schedule-line::after,
-.schedule-line::before{
+  }
+  .schedule-line::after,
+  .schedule-line::before {
     right: 0.2vw;
+  }
 }
-}
-@media screen and (max-width:280px) {
-  .schedule-spotimg{
+@media screen and (max-width: 280px) {
+  .schedule-spotimg {
     width: 15%;
     object-fit: cover;
   }
@@ -1191,38 +1279,39 @@ body {
   margin-top: 8vw;
 }
 
-#cast-title{
+#cast-title {
   text-transform: uppercase;
   display: flex;
   justify-content: center;
+  font-size: 70px;
 }
-#cast-title.anime-active{
-  --y2:0;
+#cast-title.anime-active {
+  --y2: 0;
 }
 
 .cast-anime {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .cast-anime-text {
   display: inline-block;
-  transform: translateY(var(--y2,101%));
+  transform: translateY(var(--y2, 101%));
   transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
   transition-delay: calc(0.05s * var(--cast-anime-index));
 }
 
 .cast-container {
-  display:flex;
+  display: flex;
   margin: 0 10vw;
 }
-.cast-title{
+.cast-title {
   font-family: "Oswald";
-  font-size: 3vw;
+  font-size: 57.6px;
   opacity: 0;
   color: #323232;
 }
 
-.cast-title.anime-active{
+.cast-title.anime-active {
   animation: fadeInLeft 0.3s ease forwards;
 }
 
@@ -1231,21 +1320,27 @@ body {
   padding: 0 5vw;
 }
 
-.cast-list{
+.cast-list {
   display: flex;
   flex-wrap: wrap;
   text-align: left;
 }
 
-.cast-item.anime-active{
+.cast-item.anime-active {
   animation: fadeInLeft 0.3s ease forwards;
 }
 
-.cast-delay{
+.cast-delay-1 {
   animation-delay: 0.1s !important;
 }
+.cast-delay-2 {
+  animation-delay: 0.2s !important;
+}
+.cast-delay-3 {
+  animation-delay: 0.3s !important;
+}
 
-.cast-item{
+.cast-item {
   opacity: 0;
   font-family: "Noto Serif JP";
   width: 50%;
@@ -1253,23 +1348,70 @@ body {
   color: #323232;
 }
 
-
 .cast-role {
-  
   color: #4289a3;
   font-weight: 400;
-  font-size: 1.5vw;
+  font-size: 28.8px;
 }
 
 .cast-name {
   color: #246c87;
-  font-size: 2vw;
+  font-size: 38.4px;
   font-weight: 600;
-  margin:0;
+  margin: 0;
 }
 
+@media screen and (max-width: 840px) {
+  #cast-title {
+    font-size: 8vw;
+  }
+  .cast-title{
+    font-size: 6.857vw;
+  }
+  .cast-name{
+    font-size: 4.57vw;
+  }
+  .cast-role{
+    font-size: 3.42vw;
+  }
+}
 
-.intro-text-content p.anime-active{
+@media screen and (max-width:1600px){
+  .cast-container{
+    margin: 0 5vw;
+  }
+}
+@media screen and (max-width:1330px){
+  .cast-container{
+    margin: 0 3vw;
+  }
+}
+@media screen and (max-width:1260px){
+  .cast-section{
+    padding: 2.5vw;
+  }
+}
+
+@media screen and (max-width: 1110px){
+  .cast-title{
+    text-align: center;
+  }
+  .cast-container{
+    display: block;
+    padding: 0 10vw;
+  }
+  .cast-section{
+    width: 100%;
+  }
+  .cast-delay-2{
+    animation-delay: 0;
+  }
+  .cast-delay-3{
+    animation-delay: 0.1;
+  }
+}
+
+.intro-text-content p.anime-active {
   animation: fadeInLeft ease 0.5s forwards;
 }
 @keyframes fadeInLeft {
@@ -1283,42 +1425,52 @@ body {
   }
 }
 
-
-@keyframes cliptoright{
-  from{
+@keyframes cliptoright {
+  from {
     clip-path: inset(0 100% 0 0);
   }
-  to{
+  to {
     clip-path: inset(0 0% 0 0);
   }
 }
-@keyframes cliptoleft{
-  from{
+@keyframes cliptoleft {
+  from {
     clip-path: inset(0 0 0 0);
   }
-  to{
+  to {
     clip-path: inset(0 0 0 100%);
   }
 }
-.footer-top{
+.footer-top {
   height: 30vh;
   width: 100%;
-  clip-path: polygon(47% 84%, 60% 92%, 75% 84%, 82% 92%, 100% 89%, 100% 100%, 0 100%, 0 87%, 16% 82%, 34% 91%);
+  clip-path: polygon(
+    47% 84%,
+    60% 92%,
+    75% 84%,
+    82% 92%,
+    100% 89%,
+    100% 100%,
+    0 100%,
+    0 87%,
+    16% 82%,
+    34% 91%
+  );
   background-color: #191919;
-background-image: url("https://www.transparenttextures.com/patterns/otis-redding.png");
+  background-image: url("https://www.transparenttextures.com/patterns/otis-redding.png");
 }
-.footer-middle{
+.footer-middle {
   margin: -3px;
   height: 20vh;
   background-color: #191919;
-background-image: url("https://www.transparenttextures.com/patterns/otis-redding.png");
+  background-image: url("https://www.transparenttextures.com/patterns/otis-redding.png");
 }
 
-footer{
+footer {
   font-family: "Oswald";
   font-style: italic;
   background-color: #191919;
-background-image: url("https://www.transparenttextures.com/patterns/otis-redding.png");
+  background-image: url("https://www.transparenttextures.com/patterns/otis-redding.png");
   width: 100%;
   height: 100vh;
   display: flex;
@@ -1328,7 +1480,7 @@ background-image: url("https://www.transparenttextures.com/patterns/otis-redding
 }
 
 .glitch {
-  font-size: max(25px,5vw);
+  font-size: max(25px, 5vw);
   color: #f1f1f1;
   transform: skew(var(--skew));
   transform: skew(var(--skew)) scale(var(--scale));
@@ -1341,8 +1493,8 @@ background-image: url("https://www.transparenttextures.com/patterns/otis-redding
   width: 100%;
   transition: clip-path 50ms ease-in;
   background-color: #191919;
-  
-background-image: url("https://www.transparenttextures.com/patterns/otis-redding.png");
+
+  background-image: url("https://www.transparenttextures.com/patterns/otis-redding.png");
 }
 
 .glitch::before {
@@ -1354,4 +1506,5 @@ background-image: url("https://www.transparenttextures.com/patterns/otis-redding
 .glitch::after {
   left: -5px;
   text-shadow: -2px 2px #cc2a1f;
-  clip-path: polygon(0 var(--t2), 100% var(--t2), 100% var(--b2), 0 var(--b2));}
+  clip-path: polygon(0 var(--t2), 100% var(--t2), 100% var(--b2), 0 var(--b2));
+}
