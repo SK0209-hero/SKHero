@@ -372,6 +372,7 @@ body.no-scroll {
 
 .chara-buttons button {
   position: relative;
+  padding:0;
   background-color: rgb(88, 88, 88);
   border-radius: 50%;
   width: 100px; /*変更するやつ*/
@@ -382,10 +383,9 @@ body.no-scroll {
   overflow: hidden;
   transition: background-color 0.3s ease;
   img {
-    height: 100%;
-    aspect-ratio: 1;
     object-fit: cover;
-    transform: scale(1.2);
+    height: 100%;
+    width: 100%;
     transition: filter 0.3s ease, transform 0.3s ease;
     filter: brightness(50%);
   }
@@ -611,7 +611,7 @@ body.no-scroll {
     margin-bottom: 0.5vw; /*変更するやつ*/
   }
   .chara-master::before {
-    font-size: 1.7vw;
+    font-size: 1.5vw;
   }
   .chara-master {
     font-size: 2.5vw;
