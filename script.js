@@ -86,7 +86,7 @@ function scrollAnimation() {
   animatedElements_fast.forEach((element) => {
     observer_fast.observe(element);
   });
-};
+}
 
 function glitch(element) {
   let count = 0;
@@ -126,13 +126,13 @@ glitch(footer);
 
 //リロード時確実にページトップへ
 history.scrollRestoration = "manual";
-window.addEventListener('beforeunload', function() {
+window.addEventListener("beforeunload", function () {
   window.scrollTo(0, 0);
 });
 
 const loading = document.querySelector(".loading-area");
 
-window.addEventListener("load",function(){
+window.addEventListener("load", function () {
   setTimeout(() => {
     loading.classList.add("loaded");
     setTimeout(() => {
@@ -167,7 +167,8 @@ function LoadedAnimation() {
     return (
       rect.top >= 0 &&
       rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
       rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
   }
@@ -184,7 +185,9 @@ function LoadedAnimation() {
 
   fadeChars.forEach((char, index) => {
     setTimeout(() => {
-      char.style.transition = `opacity ${animationDuration / 1000}s ease-out, transform ${animationDuration / 1000}s ease-out`;
+      char.style.transition = `opacity ${
+        animationDuration / 1000
+      }s ease-out, transform ${animationDuration / 1000}s ease-out`;
       char.style.opacity = 1;
       char.style.transform = "Scale(1)";
     }, index * delayBetweenChars);
@@ -195,34 +198,45 @@ function LoadedAnimation() {
 
     if (!targetImage) {
       enableScroll();
-      console.error("指定された画像要素が見つかりませんでした。スクロールを有効にします。");
+      console.error(
+        "指定された画像要素が見つかりませんでした。スクロールを有効にします。"
+      );
       return;
     }
 
     const imageRect = targetImage.getBoundingClientRect();
-    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+    const viewportHeight =
+      window.innerHeight || document.documentElement.clientHeight;
     const shouldScroll = imageRect.bottom > viewportHeight || imageRect.top < 0;
 
     if (shouldScroll) {
-      console.log("画像が画面外なので、フェードと同時に下にスクロールを実行します。");
-      customSmoothScrollToElementBottom(targetImage, totalFadeInTime).then(() => {
-        console.log("下へのスクロールが完了しました。1秒待機します...");
-        setTimeout(() => {
-          console.log("1秒待機後、ページトップへスクロールを開始します。");
-          customSmoothScrollToTop(1500).then(() => {
-            enableScroll();
-            console.log("ページトップへのスクロールが完了し、スクロールが有効になりました。");
-            scrollAnimation();
-          });
-        }, 1000);
+      console.log(
+        "画像が画面外なので、フェードと同時に下にスクロールを実行します。"
+      );
+      customSmoothScrollToElementBottom(targetImage, totalFadeInTime).then(
+        () => {
+          console.log("下へのスクロールが完了しました。1秒待機します...");
+          setTimeout(() => {
+            console.log("1秒待機後、ページトップへスクロールを開始します。");
+            customSmoothScrollToTop(1500).then(() => {
+              enableScroll();
+              console.log(
+                "ページトップへのスクロールが完了し、スクロールが有効になりました。"
+              );
+              scrollAnimation();
+            });
+          }, 1000);
 
-        fadeChars.forEach((char) => {
-          char.style.transition = "none";
-        });
-        posterTextarea.style.transition = "none";
-      });
+          fadeChars.forEach((char) => {
+            char.style.transition = "none";
+          });
+          posterTextarea.style.transition = "none";
+        }
+      );
     } else {
-      console.log("画像が画面内にあるので、自動スクロールはしません。スクロールを有効にします。");
+      console.log(
+        "画像が画面内にあるので、自動スクロールはしません。スクロールを有効にします。"
+      );
       setTimeout(() => {
         enableScroll();
         scrollAnimation();
