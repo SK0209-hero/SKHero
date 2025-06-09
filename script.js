@@ -130,13 +130,27 @@ window.addEventListener('beforeunload', function() {
   window.scrollTo(0, 0);
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  window.scrollTo(0,0);
+const loading = document.querySelector(".loading-area");
+
+window.addEventListener("load",function(){
+  setTimeout(() => {
+    loading.classList.add("loaded");
+    setTimeout(() => {
+      LoadedAnimation();
+      //ボタンのために
+      loading.style.display = "none";
+    }, 1000);
+  }, 3000);
+});
+
+//ロード後アニメーション
+function LoadedAnimation() {
+  window.scrollTo(0, 0);
   const body = document.body;
   const posterTextarea = document.querySelector(".poster-textarea");
   const fadeChars = document.querySelectorAll(".poster-textarea .poster-anime");
   const heroSection = document.querySelector(".area-poster");
-  scrollTo(0,0);
+
   // スクロールをブロックする関数
   function disableScroll() {
     body.classList.add("no-scroll");
@@ -153,100 +167,74 @@ document.addEventListener("DOMContentLoaded", () => {
     return (
       rect.top >= 0 &&
       rect.left >= 0 &&
-      rect.bottom <=
-        (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
       rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
   }
 
-  // --- ロード完了時の初期処理 ---
-  window.onload = () => {
-    window.scrollTo(0, 0);
-    // ロード直後にスクロールを無効化 (これは常に実行)
-    disableScroll();
+  // --- 初期処理開始 ---
+  disableScroll();
 
-    // フェードインアニメーションを開始 (JavaScriptで個別に制御)
-    const animationDuration = 1000; // 各文字のアニメーション時間を1秒に
-    const delayBetweenChars = 200; // 各文字間の遅延時間を0.2秒に
-    const totalFadeInTime =
-      fadeChars.length > 0
-        ? (fadeChars.length - 1) * delayBetweenChars + animationDuration
-        : 0;
+  const animationDuration = 1000;
+  const delayBetweenChars = 200;
+  const totalFadeInTime =
+    fadeChars.length > 0
+      ? (fadeChars.length - 1) * delayBetweenChars + animationDuration
+      : 0;
 
-    fadeChars.forEach((char, index) => {
-      setTimeout(() => {
-        char.style.transition = `opacity ${
-          animationDuration / 1000
-        }s ease-out, transform ${animationDuration / 1000}s ease-out`;
-        char.style.opacity = 1;
-        char.style.transform = "Scale(1)";
-      }, index * delayBetweenChars);
-    });
-
-    // フェードインが開始されたごく短い遅延後に、条件付きで自動スクロールを開始
+  fadeChars.forEach((char, index) => {
     setTimeout(() => {
-      // ごくわずかな遅延でスクロールチェックと開始
-      const targetImage = document.querySelector(".area-poster img");
+      char.style.transition = `opacity ${animationDuration / 1000}s ease-out, transform ${animationDuration / 1000}s ease-out`;
+      char.style.opacity = 1;
+      char.style.transform = "Scale(1)";
+    }, index * delayBetweenChars);
+  });
 
-      if (!targetImage) {
-        enableScroll();
-        console.error(
-          "指定された画像要素が見つかりませんでした。スクロールを有効にします。"
-        );
-        return;
-      }
+  setTimeout(() => {
+    const targetImage = document.querySelector(".area-poster img");
 
-      const imageRect = targetImage.getBoundingClientRect();
-      const viewportHeight =
-        window.innerHeight || document.documentElement.clientHeight;
-      const shouldScroll =
-        imageRect.bottom > viewportHeight || imageRect.top < 0;
+    if (!targetImage) {
+      enableScroll();
+      console.error("指定された画像要素が見つかりませんでした。スクロールを有効にします。");
+      return;
+    }
 
-      if (shouldScroll) {
-        console.log(
-          "画像が画面外なので、フェードと同時に下にスクロールを実行します。"
-        );
-        customSmoothScrollToElementBottom(targetImage, totalFadeInTime).then(
-          () => {
-            console.log("下へのスクロールが完了しました。1秒待機します...");
-            setTimeout(() => {
-              // 1秒待機
-              console.log("1秒待機後、ページトップへスクロールを開始します。");
-              // ページトップへのスクロール時間は任意で設定（例: 1500ms）
-              customSmoothScrollToTop(1500).then(() => {
-                enableScroll(); // 全ての自動スクロールが完了したらスクロールを有効化
-                console.log(
-                  "ページトップへのスクロールが完了し、スクロールが有効になりました。"
-                );
-                scrollAnimation(); //ページ全体のアニメーション開始
-              });
-            }, 1000); // 1000ミリ秒 = 1秒待機
+    const imageRect = targetImage.getBoundingClientRect();
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+    const shouldScroll = imageRect.bottom > viewportHeight || imageRect.top < 0;
 
-            // アニメーション完了後、transitionをリセット (下へのスクロールが完了した時点でリセット)
-
-            fadeChars.forEach((char) => {
-              char.style.transition = "none";
-            });
-            posterTextarea.style.transition = "none";
-          }
-        );
-      } else {
-        console.log(
-          "画像が画面内にあるので、自動スクロールはしません。スクロールを有効にします。"
-        );
+    if (shouldScroll) {
+      console.log("画像が画面外なので、フェードと同時に下にスクロールを実行します。");
+      customSmoothScrollToElementBottom(targetImage, totalFadeInTime).then(() => {
+        console.log("下へのスクロールが完了しました。1秒待機します...");
         setTimeout(() => {
-          enableScroll();
-          scrollAnimation(); //ページ全体のアニメーション開始
-        }, totalFadeInTime);
+          console.log("1秒待機後、ページトップへスクロールを開始します。");
+          customSmoothScrollToTop(1500).then(() => {
+            enableScroll();
+            console.log("ページトップへのスクロールが完了し、スクロールが有効になりました。");
+            scrollAnimation();
+          });
+        }, 1000);
+
         fadeChars.forEach((char) => {
           char.style.transition = "none";
         });
         posterTextarea.style.transition = "none";
-      }
-    }, 50);
-  };
+      });
+    } else {
+      console.log("画像が画面内にあるので、自動スクロールはしません。スクロールを有効にします。");
+      setTimeout(() => {
+        enableScroll();
+        scrollAnimation();
+      }, totalFadeInTime);
+      fadeChars.forEach((char) => {
+        char.style.transition = "none";
+      });
+      posterTextarea.style.transition = "none";
+    }
+  }, 50);
 
-  // カスタムスムーズスクロール関数 (requestAnimationFrameを使用)
+  // カスタムスムーズスクロール関数
   function customSmoothScrollToElementBottom(element, duration) {
     return new Promise((resolve) => {
       const startScrollY = window.scrollY || window.pageYOffset;
@@ -288,15 +276,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ページトップへスムーズスクロールする関数
+  // ページトップへスムーズスクロール
   function customSmoothScrollToTop(duration) {
     return new Promise((resolve) => {
       const startScrollY = window.scrollY || window.pageYOffset;
-      const targetScrollY = 0; // ページトップ
+      const targetScrollY = 0;
       const distance = targetScrollY - startScrollY;
 
       if (Math.abs(distance) < 1) {
-        // 既にトップにいる場合
         window.scrollTo(0, targetScrollY);
         resolve();
         return;
@@ -309,7 +296,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const elapsed = currentTime - startTime;
         const progress = Math.min(elapsed / duration, 1);
 
-        // イージング関数
         const easeProgress =
           progress < 0.5
             ? 2 * progress * progress
@@ -328,4 +314,4 @@ document.addEventListener("DOMContentLoaded", () => {
       requestAnimationFrame(animateScroll);
     });
   }
-});
+}

@@ -12,6 +12,7 @@
       rel="stylesheet"
     />
     <link href="https://fonts.googleapis.com/css2?family=Zen+Antique+Soft&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
 
     <meta charset="UTF-8" />
     <meta name="color-scheme" content="light only" />
@@ -19,7 +20,12 @@
     <title>栄北ヒーローショー</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body ontouchstart="">
+  <body ontouchstart="" class="no-scroll">
+
+    <!--LOADING-->
+    <div class="loading-area">
+    <div class="loader"></div>
+    </div>
     <div class="container">
       <div class="section">
         <div class="area-poster">
@@ -176,7 +182,7 @@
             <div class="chara-group chara-no1 chara-show">
               <div class="chara-intro">
                 <div class="chara-image">
-                  <img src="img/test1.png" alt="Hero Character" />
+                  <img src="img/character/style/makoto.png" alt="Hero Character" />
                 </div>
                 <div class="chara-textarea">
                   <div class="chara-name">
@@ -222,7 +228,7 @@
             <div class="chara-group chara-no3">
               <div class="chara-intro">
                 <div class="chara-image">
-                  <img src="img/test1.png" alt="Hero Character" />
+                  <img src="img/character/style/bunkei_hero.png" alt="Hero Character" />
                 </div>
                 <div class="chara-textarea">
                   <div class="chara-name">
@@ -383,16 +389,10 @@
           </div>
           <div class="chara-buttons">
             <div class="chara-button-1">
-              <button data-group="chara-no1" class="chara-button-active">
-                <img src="img/kao.png" />
-              </button>
+              <button data-group="chara-no1" class="chara-button-active"><img src="img/character/face/makoto.png" /></button>
               <button data-group="chara-no2"><img src="img/test.png" /></button>
-              <button data-group="chara-no3">
-                <img src="img/test2.jpg" />
-              </button>
-              <button data-group="chara-no4">
-                <img src="img/test2.jpg" />
-              </button>
+              <button data-group="chara-no3"><img src="img/character/face/bunkei_hero.png" /></button>
+              <button data-group="chara-no4"><img src="img/test2.jpg" /></button>
             </div>
             <div class="chara-button-2">
               <button data-group="chara-no5"><img src="img/kao.png" /></button>
