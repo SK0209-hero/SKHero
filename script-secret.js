@@ -119,7 +119,7 @@ const finishLoading = () => {
       setTimeout(() => {
         scrollAnimation();
         enableScroll();
-      }, 500);
+      }, 100);
     }, 1000);
   }, 500);
 };
