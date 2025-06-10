@@ -236,12 +236,12 @@ background-image: url("https://www.transparenttextures.com/patterns/dark-geometr
   color:#001d53;
 }
 .popup-form input[type="text"]{
-  font-size: 4vw;
+  font-size: 5vw;
   line-height: normal;
 }
 
 .popup-form button {
-  font-size: 4vw;
+  font-size: 5vw;
 }
 }
 
@@ -249,13 +249,13 @@ background-image: url("https://www.transparenttextures.com/patterns/dark-geometr
   position: absolute;
   top: 10px;
   right: 10px;
-  font-size: 14px;
+  font-size: calc(14/1920*100vw);
   cursor: pointer;
   padding: 8px;
   background: #00afd7;
   color: #fff;
   border-radius: 15px;
-  line-height: 14px;
+  line-height: calc(14/1920*100vw);
   font-weight: bold;
 }
 
