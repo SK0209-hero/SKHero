@@ -84,6 +84,7 @@ body {
 }
 
 .secret-page {
+  display:none;
   opacity: 0;
   position: absolute;
   bottom: 0;
@@ -196,9 +197,9 @@ body {
   position: relative;
   align-self: center;
   width: 90%;
-  border-radius: 20px;
+  border-radius: calc(40/1920*100vw);
   max-width: 800px;
-  padding: 30px 40px;
+  padding: calc(30/1920*100vw) calc(40/1920*100vw);
   box-sizing: border-box;
   background-color: #ececec;
 background-image: url("https://www.transparenttextures.com/patterns/dark-geometric.png");
@@ -225,22 +226,22 @@ background-image: url("https://www.transparenttextures.com/patterns/dark-geometr
 }
 @media screen and (max-width:500px){
   .popup-text h3{
-  font-size: 3vw;
+  font-size: 5vw;
 }
 .popup-text p{
-  font-size: 2.5vw;
+  font-size: 3vw;
 }
 .popup-text h2{
-  font-size: 2.5vw;
+  font-size: 3vw;
   color:#001d53;
 }
 .popup-form input[type="text"]{
-  font-size: 2.3vw;
+  font-size: 4vw;
   line-height: normal;
 }
 
 .popup-form button {
-  font-size: 2.3vw;
+  font-size: 4vw;
 }
 }
 

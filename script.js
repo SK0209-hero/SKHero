@@ -255,6 +255,8 @@ function LoadedAnimation() {
                 "ページトップへのスクロールが完了し、スクロールが有効になりました。"
               );
               scrollAnimation();
+              const secretPageButton = document.querySelector('.secret-page'); //アニメーション中に開かれないために
+        secretPageButton.style.display = 'block';
             });
           }, 1000);
 
@@ -266,11 +268,14 @@ function LoadedAnimation() {
       );
     } else {
       console.log(
-        "画像が画面内にあるので、自動スクロールはしません。スクロールを有効にします。"
+        "画像が画面内にあるので、自動スクロールはしません。"
       );
       setTimeout(() => {
         enableScroll();
+        console.log("スクロールを有効にします。");
         scrollAnimation();
+        const secretPageButton = document.querySelector('.secret-page'); //アニメーション中に開かれないために
+        secretPageButton.style.display = 'block';
       }, totalFadeInTime);
       fadeChars.forEach((char) => {
         char.style.transition = "none";
