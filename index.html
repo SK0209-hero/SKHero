@@ -15,7 +15,10 @@
       href="https://fonts.googleapis.com/css2?family=Zen+Antique+Soft&display=swap"
       rel="stylesheet"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=block" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron&display=block"
+      rel="stylesheet"
+    />
 
     <meta charset="UTF-8" />
     <meta name="color-scheme" content="light only" />
@@ -40,7 +43,7 @@
   <body ontouchstart="" class="no-scroll">
     <!--LOADING-->
     <div class="loading-area">
-    <div class="particles">
+      <div class="particles">
         <div class="particle"></div>
         <div class="particle"></div>
         <div class="particle"></div>
@@ -50,17 +53,40 @@
         <div class="particle"></div>
         <div class="particle"></div>
         <div class="particle"></div>
-    </div>
+      </div>
 
-    <div class="loading-container">
+      <div class="loading-container">
         <div class="loading-spinner"></div>
         <div class="loading-text">Loading</div>
         <div class="progress-bar">
-            <div class="progress-fill"></div>
+          <div class="progress-fill"></div>
         </div>
         <div class="loading-dots"></div>
         <div class="percentage" id="percentage">0%</div>
+      </div>
     </div>
+    <!--ここまでロード画面-->
+
+    <div class="popup-wrap">
+      <input id="trigger" type="checkbox" />
+      <div class="popup-overlay">
+        <label for="trigger" class="popup-trigger"></label>
+        <div class="popup-content">
+          <label for="trigger" class="close-btn">×</label>
+          <div class="popup-text">
+            <h3>🔑特別サイトへの入り口🔑</h3>
+            <p>クイズに答えてね！</p>
+            <h2>/ Q.文系レッドが作中で使っていた武器は、双剣と何？ \</h2>
+          </div>
+          <div class="popup-form">
+    <form name="quizForm" onsubmit="AnswerCheck();return false;">
+      <input type="text" name="input" placeholder="例:システム英単語">
+      <button type="submit" class="popup-submit">送信</button>
+    </form>
+    <div class="popup-result"></div>
+  </div>
+        </div>
+      </div>
     </div>
     <div class="container">
       <div class="section">
@@ -77,6 +103,14 @@
             <span class="poster-anime animated-element-delay">る</span>
             <span class="poster-anime animated-element-delay">か</span>
           </div>
+          <label for="trigger" class="secret-page animated-element">
+            <div class="secret-inner">
+              <div class="secret-text">特別ページへ！</div>
+              <div class="secret-loading"></div>
+              <img class="secret-button" src="img/lock.png" />
+              <div class="secret-small">ショーを見た人へ</div>
+            </div>
+          </label>
         </div>
       </div>
       <div class="section">
@@ -293,7 +327,10 @@
             <div class="chara-group chara-no4">
               <div class="chara-intro">
                 <div class="chara-image">
-                  <img src="img/test1.png" alt="Hero Character" />
+                  <img
+                    src="img/character/style/rikei_hero.png"
+                    alt="Hero Character"
+                  />
                 </div>
                 <div class="chara-textarea">
                   <div class="chara-name">
@@ -439,7 +476,7 @@
                 <img src="img/character/face/bunkei_hero.png" />
               </button>
               <button data-group="chara-no4">
-                <img src="img/test2.jpg" />
+                <img src="img/character/face/rikei_hero.png" />
               </button>
             </div>
             <div class="chara-button-2">

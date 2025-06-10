@@ -130,6 +130,51 @@ window.addEventListener("beforeunload", function () {
   window.scrollTo(0, 0);
 });
 
+
+const correctAnswer = ["漢字辞典","かんじじてん"]; // 複数の正解パターンを許容
+        const nextPageUrl = "secret_page.html"; // 正解時に遷移する次のページのURL
+
+        const triggerCheckbox = document.getElementById('trigger');
+    const body = document.body;
+
+    triggerCheckbox.addEventListener('change', function() {
+        if (this.checked) {
+            // ポップアップが開いたらスクロールを禁止
+            body.classList.add('no-scroll');
+        } else {
+            // ポップアップが閉じたらスクロールを解除
+            body.classList.remove('no-scroll');
+            // ポップアップが閉じられたら結果表示をリセット
+            document.querySelector(".popup-result").textContent = "";
+            document.querySelector(".popup-result").className = "popup-result";
+            document.quizForm.input.value = ""; // 入力欄もクリア
+        }
+    });
+
+        function AnswerCheck() {
+            const userAnswer = document.quizForm.input.value.trim(); // 入力値を取得し、前後の空白を除去
+            const resultDiv = document.querySelector(".popup-result");
+
+
+            let isCorrect = false;
+            for (let i = 0; i < correctAnswer.length; i++) {
+                if (userAnswer === correctAnswer[i]) {
+                    isCorrect = true;
+                    break;
+                }
+            }
+
+            if (isCorrect) {
+                resultDiv.textContent = "正解です！ 特別ページに移動します。";
+                resultDiv.className = "popup-result correct";
+                setTimeout(() => {
+                    window.location.href = nextPageUrl; // 1秒後に次のページへ遷移
+                }, 1000);
+            } else {
+                resultDiv.textContent = "不正解です。もう一度お試しください。";
+                resultDiv.className = "popup-result incorrect";
+            }
+        }
 //ロード後アニメーション
 function LoadedAnimation() {
   window.scrollTo(0, 0);
@@ -159,7 +204,6 @@ function LoadedAnimation() {
       rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
   }
-
   // --- 初期処理開始 ---
   disableScroll();
 
@@ -404,4 +448,4 @@ let progress = 0;
                     particle.remove();
                 }
             }, 8000);
-        }, 800);
+        }, 800); 

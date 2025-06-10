@@ -33,12 +33,9 @@ body {
   background-color: #ffffff;
   background-image: url("img/background.png");
 }
-body.no-scroll {
-  overflow: hidden;
-}
+
 .area-poster {
   position: relative;
-  display: flex;
 }
 
 .area-poster img {
@@ -85,6 +82,236 @@ body.no-scroll {
   opacity: 1;
   transform: scale(1);
 }
+
+.secret-page {
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+  height: 19vw;
+  aspect-ratio: 1.1;
+  right: 0;
+  box-sizing: border-box;
+  padding: 0.7vw;
+  text-align: center;
+
+  overflow: hidden;
+}
+
+.secret-page.anime-active {
+  animation: fadeIn ease 0.5s forwards;
+}
+.secret-text {
+  position: absolute;
+  left: 8%;
+  z-index: 2;
+  font-family: "Noto Serif JP";
+  font-size: 2.5vw;
+  white-space: nowrap;
+  color: #cdcdcd;
+}
+.secret-small {
+  position: absolute;
+  font-size: 1.5vw;
+  bottom: 1.2vw;
+  left: 20%;
+  z-index: 2;
+  font-family: "Noto Serif JP";
+  white-space: nowrap;
+  color: #cdcdcd;
+}
+.secret-arrow {
+  height: 10%;
+}
+.secret-button {
+  z-index: 1;
+  height: 65%;
+  object-fit: cover;
+  top: 0;
+  animation: ZoomInOut 3s infinite alternate;
+}
+
+@keyframes ZoomInOut {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.secret-loading {
+  width: 17vw;
+  position: absolute;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: calc(8 / 1920 * 100vw) solid;
+  border-color: #0d696d #00000000;
+  animation: l1 1s infinite;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+@keyframes l1 {
+  to {
+    transform: rotate(0.5turn);
+  }
+}
+.secret-click {
+  height: 5%;
+}
+.secret-inner {
+  position: relative;
+}
+
+.popup-wrap input {
+  display: none;
+}
+.popup-overlay {
+  display: flex;
+  justify-content: center;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 0.5s, transform 0s 0.5s;
+  transform: scale(0);
+}
+
+.popup-trigger {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.popup-content {
+  position: relative;
+  align-self: center;
+  width: 90%;
+  border-radius: 20px;
+  max-width: 800px;
+  padding: 30px 40px;
+  box-sizing: border-box;
+  background-color: #ececec;
+background-image: url("https://www.transparenttextures.com/patterns/dark-geometric.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  line-height: 1.4em;
+  transition: 0.5s;
+  text-align: center;
+}
+
+.popup-text{
+  color:#191919;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.popup-text h3{
+  font-size: 2.3vw;
+}
+.popup-text p{
+  font-size: 1.5vw;
+}
+.popup-text h2{
+  font-size: 2vw;
+  color:#001d53;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 8px;
+  background: #00afd7;
+  color: #fff;
+  border-radius: 15px;
+  line-height: 14px;
+  font-weight: bold;
+}
+
+.popup-wrap input:checked ~ .popup-overlay {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.5s;
+}
+
+.popup-wrap input:checked ~ .popup-overlay .popup-content {
+  transform: translateY(50px);
+}
+
+.popup-form form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.popup-form input {
+  position: relative;
+  display: block;
+  outline: none;
+  border-radius: calc(30 / 1920 * 100vw);
+  border: solid 0.1vw #999999;
+}
+.popup-form input[type="text"] {
+  padding: 0 0 0 0.5vw;
+  height: 4vw;
+  line-height: 2.3vw;
+  font-size: 1.5vw;
+  background-color: #e8e8e8;
+  width: 70%;
+}
+.popup-form input[type="text"]:disabled {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.popup-form button {
+  color: #ffffff;
+  background-color: #00508d;
+  font-size: 1.5vw;
+  font-weight: bold;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 0.5vw 2vw;
+  margin-left: 0.5vw;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1vw;
+  border-radius: calc(20 / 1920 * 100vw);
+}
+
+.popup-result {
+  margin-top: 1vw;
+  font-weight: bold;
+  font-size: 1.5vw;
+}
+
+.popup-result.correct {
+  color: #28a745; /* 緑色 */
+}
+
+.popup-result.incorrect {
+  color: #dc3545; /* 赤色 */
+}
+.popup-submit:hover {
+            background-color: #0056b3;
+        }
 
 .section {
   width: 100%;
@@ -1822,4 +2049,8 @@ footer {
   justify-content: center;
   align-items: center;
   transition: opacity 0.5s ease;
+}
+
+body.no-scroll {
+  overflow: hidden;
 }
