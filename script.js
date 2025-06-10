@@ -1,5 +1,7 @@
 const buttons = document.querySelectorAll(".chara-buttons button[data-group]");
 const groups = document.querySelectorAll(".chara-group");
+
+const body = document.body;
 let currentGroup = document.querySelector(".chara-group.chara-show");
 let currentActiveButton = document.querySelector(".chara-button-active");
 let ButtonToggle = false;
@@ -130,55 +132,51 @@ window.addEventListener("beforeunload", function () {
   window.scrollTo(0, 0);
 });
 
+const correctAnswer = ["漢字辞典", "かんじじてん"]; // 複数の正解パターンを許容
+const nextPageUrl = "secret_page.html"; // 正解時に遷移する次のページのURL
 
-const correctAnswer = ["漢字辞典","かんじじてん"]; // 複数の正解パターンを許容
-        const nextPageUrl = "secret_page.html"; // 正解時に遷移する次のページのURL
+const triggerCheckbox = document.getElementById("trigger");
 
-        const triggerCheckbox = document.getElementById('trigger');
-    const body = document.body;
+triggerCheckbox.addEventListener("change", function () {
+  if (this.checked) {
+    // ポップアップが開いたらスクロールを禁止
+    body.classList.add("no-scroll");
+  } else {
+    // ポップアップが閉じたらスクロールを解除
+    body.classList.remove("no-scroll");
+    // ポップアップが閉じられたら結果表示をリセット
+    document.querySelector(".popup-result").textContent = "";
+    document.querySelector(".popup-result").className = "popup-result";
+    document.quizForm.input.value = ""; // 入力欄もクリア
+  }
+});
 
-    triggerCheckbox.addEventListener('change', function() {
-        if (this.checked) {
-            // ポップアップが開いたらスクロールを禁止
-            body.classList.add('no-scroll');
-        } else {
-            // ポップアップが閉じたらスクロールを解除
-            body.classList.remove('no-scroll');
-            // ポップアップが閉じられたら結果表示をリセット
-            document.querySelector(".popup-result").textContent = "";
-            document.querySelector(".popup-result").className = "popup-result";
-            document.quizForm.input.value = ""; // 入力欄もクリア
-        }
-    });
+function AnswerCheck() {
+  const userAnswer = document.quizForm.input.value.trim(); // 入力値を取得し、前後の空白を除去
+  const resultDiv = document.querySelector(".popup-result");
 
-        function AnswerCheck() {
-            const userAnswer = document.quizForm.input.value.trim(); // 入力値を取得し、前後の空白を除去
-            const resultDiv = document.querySelector(".popup-result");
+  let isCorrect = false;
+  for (let i = 0; i < correctAnswer.length; i++) {
+    if (userAnswer === correctAnswer[i]) {
+      isCorrect = true;
+      break;
+    }
+  }
 
-
-            let isCorrect = false;
-            for (let i = 0; i < correctAnswer.length; i++) {
-                if (userAnswer === correctAnswer[i]) {
-                    isCorrect = true;
-                    break;
-                }
-            }
-
-            if (isCorrect) {
-                resultDiv.textContent = "正解です！ 特別ページに移動します。";
-                resultDiv.className = "popup-result correct";
-                setTimeout(() => {
-                    window.location.href = nextPageUrl; // 1秒後に次のページへ遷移
-                }, 1000);
-            } else {
-                resultDiv.textContent = "不正解です。もう一度お試しください。";
-                resultDiv.className = "popup-result incorrect";
-            }
-        }
+  if (isCorrect) {
+    resultDiv.textContent = "正解です！ 特別ページに移動します。";
+    resultDiv.className = "popup-result correct";
+    setTimeout(() => {
+      window.location.href = nextPageUrl; // 1秒後に次のページへ遷移
+    }, 1000);
+  } else {
+    resultDiv.textContent = "不正解です。もう一度お試しください。";
+    resultDiv.className = "popup-result incorrect";
+  }
+}
 //ロード後アニメーション
 function LoadedAnimation() {
   window.scrollTo(0, 0);
-  const body = document.body;
   const posterTextarea = document.querySelector(".poster-textarea");
   const fadeChars = document.querySelectorAll(".poster-textarea .poster-anime");
   const heroSection = document.querySelector(".area-poster");
@@ -255,8 +253,8 @@ function LoadedAnimation() {
                 "ページトップへのスクロールが完了し、スクロールが有効になりました。"
               );
               scrollAnimation();
-              const secretPageButton = document.querySelector('.secret-page'); //アニメーション中に開かれないために
-        secretPageButton.style.display = 'block';
+              const secretPageButton = document.querySelector(".secret-page"); //アニメーション中に開かれないために
+              secretPageButton.style.display = "block";
             });
           }, 1000);
 
@@ -267,15 +265,13 @@ function LoadedAnimation() {
         }
       );
     } else {
-      console.log(
-        "画像が画面内にあるので、自動スクロールはしません。"
-      );
+      console.log("画像が画面内にあるので、自動スクロールはしません。");
       setTimeout(() => {
         enableScroll();
         console.log("スクロールを有効にします。");
         scrollAnimation();
-        const secretPageButton = document.querySelector('.secret-page'); //アニメーション中に開かれないために
-        secretPageButton.style.display = 'block';
+        const secretPageButton = document.querySelector(".secret-page"); //アニメーション中に開かれないために
+        secretPageButton.style.display = "block";
       }, totalFadeInTime);
       fadeChars.forEach((char) => {
         char.style.transition = "none";
@@ -367,90 +363,90 @@ function LoadedAnimation() {
 }
 
 let progress = 0;
-        let isLoaded = false;
-        let canFinish = false;
-        const percentageElement = document.getElementById('percentage');
-        const startTime = Date.now();
-        const minLoadTime = 3000; // 最低3秒
-        
-        // プログレスバーとパーセンテージの更新
-        const updateProgress = () => {
-            const elapsed = Date.now() - startTime;
-            
-            if (elapsed < minLoadTime) {
-                // 3秒未満の場合は80%まで徐々に進行
-                const timeProgress = Math.min((elapsed / minLoadTime) * 80, 80);
-                progress = Math.min(progress + Math.random() * 1.5 + 0.5, timeProgress);
-                percentageElement.textContent = Math.floor(progress) + '%';
-                setTimeout(updateProgress, 100 + Math.random() * 150);
-            } else if (isLoaded && elapsed >= minLoadTime) {
-                // 3秒経過かつロード完了時は100%まで進める
-                if (progress < 100) {
-                    progress = Math.min(progress + 5, 100);
-                    percentageElement.textContent = Math.floor(progress) + '%';
-                    if (progress < 100) {
-                        setTimeout(updateProgress, 50);
-                    } else {
-                        finishLoading();
-                    }
-                }
-            } else if (elapsed >= minLoadTime) {
-                // 3秒経過したがまだロード未完了の場合は95%で待機
-                progress = Math.min(progress + 0.2, 95);
-                percentageElement.textContent = Math.floor(progress) + '%';
-                setTimeout(updateProgress, 200);
-            } else {
-                // まだ3秒経過していない場合
-                setTimeout(updateProgress, 100);
-            }
-            const progressFill = document.querySelector('.progress-fill');
+let isLoaded = false;
+let canFinish = false;
+const percentageElement = document.getElementById("percentage");
+const startTime = Date.now();
+const minLoadTime = 3000; // 最低3秒
 
-            // プログレスバーの更新
-            progressFill.style.width = progress + '%';
-        };
+// プログレスバーとパーセンテージの更新
+const updateProgress = () => {
+  const elapsed = Date.now() - startTime;
 
-        // ロード完了処理
-        const loading_area = document.querySelector(".loading-area");
-        const finishLoading = () => {
-            setTimeout(() => {
-              loading_area.style.opacity = "0";
-              setTimeout(() => {
-                LoadedAnimation();
-                loading_area.style.display ="none";
-              }, 1000);
-            }, 500);
-        };
+  if (elapsed < minLoadTime) {
+    // 3秒未満の場合は80%まで徐々に進行
+    const timeProgress = Math.min((elapsed / minLoadTime) * 80, 80);
+    progress = Math.min(progress + Math.random() * 1.5 + 0.5, timeProgress);
+    percentageElement.textContent = Math.floor(progress) + "%";
+    setTimeout(updateProgress, 100 + Math.random() * 150);
+  } else if (isLoaded && elapsed >= minLoadTime) {
+    // 3秒経過かつロード完了時は100%まで進める
+    if (progress < 100) {
+      progress = Math.min(progress + 5, 100);
+      percentageElement.textContent = Math.floor(progress) + "%";
+      if (progress < 100) {
+        setTimeout(updateProgress, 50);
+      } else {
+        finishLoading();
+      }
+    }
+  } else if (elapsed >= minLoadTime) {
+    // 3秒経過したがまだロード未完了の場合は95%で待機
+    progress = Math.min(progress + 0.2, 95);
+    percentageElement.textContent = Math.floor(progress) + "%";
+    setTimeout(updateProgress, 200);
+  } else {
+    // まだ3秒経過していない場合
+    setTimeout(updateProgress, 100);
+  }
+  const progressFill = document.querySelector(".progress-fill");
 
-        // ページ読み込み完了イベントリスナー
-        window.addEventListener('load', () => {
-            isLoaded = true;
-            console.log('ページ読み込み完了');
-        });
+  // プログレスバーの更新
+  progressFill.style.width = progress + "%";
+};
 
-        // DOMContentLoaded後にプログレス開始
-        document.addEventListener('DOMContentLoaded', () => {
-            updateProgress();
-        });
+// ロード完了処理
+const loading_area = document.querySelector(".loading-area");
+const finishLoading = () => {
+  setTimeout(() => {
+    loading_area.style.opacity = "0";
+    setTimeout(() => {
+      LoadedAnimation();
+      loading_area.style.display = "none";
+    }, 1000);
+  }, 500);
+};
 
-        // パーティクルの動的生成
-        const particlesContainer = document.querySelector('.particles');
-        const particleInterval = setInterval(() => {
-            const elapsed = Date.now() - startTime;
-            if (elapsed > minLoadTime + 2000 && progress >= 100) {
-                clearInterval(particleInterval);
-                return;
-            }
-            
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
-            particlesContainer.appendChild(particle);
-            
-            // パーティクルを削除
-            setTimeout(() => {
-                if (particle.parentNode) {
-                    particle.remove();
-                }
-            }, 8000);
-        }, 800); 
+// ページ読み込み完了イベントリスナー
+window.addEventListener("load", () => {
+  isLoaded = true;
+  console.log("ページ読み込み完了");
+});
+
+// DOMContentLoaded後にプログレス開始
+document.addEventListener("DOMContentLoaded", () => {
+  updateProgress();
+});
+
+// パーティクルの動的生成
+const particlesContainer = document.querySelector(".particles");
+const particleInterval = setInterval(() => {
+  const elapsed = Date.now() - startTime;
+  if (elapsed > minLoadTime + 2000 && progress >= 100) {
+    clearInterval(particleInterval);
+    return;
+  }
+
+  const particle = document.createElement("div");
+  particle.className = "particle";
+  particle.style.left = Math.random() * 100 + "%";
+  particle.style.animationDuration = Math.random() * 4 + 4 + "s";
+  particlesContainer.appendChild(particle);
+
+  // パーティクルを削除
+  setTimeout(() => {
+    if (particle.parentNode) {
+      particle.remove();
+    }
+  }, 8000);
+}, 800);

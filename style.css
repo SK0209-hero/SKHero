@@ -2077,13 +2077,3 @@ footer {
 body.no-scroll {
   overflow: hidden;
 }
-
-
-/*ここからsecret-page*/
-.text-----{
-  width: 100vw;
-  font-size: 10vw;
-  height: 100vh;
-  text-align: center;
-  margin: auto;
-}
