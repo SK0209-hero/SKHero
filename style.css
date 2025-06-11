@@ -107,7 +107,7 @@ img {
   left: 8%;
   z-index: 2;
   font-family: "Noto Serif JP";
-  font-size: 2.5vw;
+  font-size: max(2.5vw,10px);
   white-space: nowrap;
   color: #cdcdcd;
 }
@@ -468,10 +468,18 @@ background-image: url("https://www.transparenttextures.com/patterns/dark-geometr
 }
 @media screen and (max-width: 840px) {
   .intro-text-content p {
-    font-size: 3.2vw;
+    font-size: max(14px,3.2vw);
   }
   #intro-title {
-    font-size: 8vw;
+    font-size: max(32px,8vw);
+  }
+}
+@media screen and (max-width: 343px) {
+  .intro-text-content p {
+    font-size: max(12px,3.2vw);
+  }
+  #intro-title {
+    font-size: max(28px,8vw);
   }
 }
 @media screen and (max-width: 500px) {
@@ -860,18 +868,18 @@ background-image: url("https://www.transparenttextures.com/patterns/dark-geometr
   }
 
   .chara-real {
-    font-size: 4vw;
+    font-size: max(4vw,20px);
     margin-bottom: 0.5vw; /*変更するやつ*/
   }
   .chara-master::before {
-    font-size: 1.5vw;
+    font-size: max(10px,1.5vw);
   }
   .chara-master {
-    font-size: 2.5vw;
+    font-size: max(2.5vw,15px);
     padding-top: 1vw;
   }
   .chara-text {
-    font-size: 2vw;
+    font-size: max(2vw,13px);
   }
   .chara-buttons {
     flex-direction: column;
@@ -897,10 +905,69 @@ background-image: url("https://www.transparenttextures.com/patterns/dark-geometr
     font-size: 8vw;
   }
 }
+@media screen and (max-width: 600px) {
+  .chara-buttons button {
+    width: max(10vw,40px);
+    margin: 0 3vw;
+  }
+  .chara-container {
+    height: 90vw;
+  }
+  .chara-intro{
+    height: 90vw;
+  }
+}
+@media screen and (max-width: 510px) {
+  .chara-container {
+    height: 100vw;
+  }
+  .chara-intro{
+    height: 100vw;
+  }
+}
+@media screen and (max-width: 440px) {
+  
+  .chara-wrapper {
+    clip-path: polygon(100% 0, 0 0, 0 100%, 100% 95%);
+  }
+  .chara-container {
+    height: 120vw;
+  }
+  .chara-intro{
+    height: 120vw;
+  }
+}
+@media screen and (max-width: 420px) {
+  .chara-container {
+    height: 140vw;
+  }
+  .chara-intro{
+    height: 140vw;
+  }
+}
+@media screen and (max-width: 360px) {
+  .chara-container {
+    height: 160vw;
+  }
+  .chara-intro{
+    height: 160vw;
+  }
+}
+@media screen and (max-width: 335px) {
+  .chara-container {
+    height: 160vw;
+  }
+  .chara-intro{
+    height: 160vw;
+  }
+  .chara-text{
+    font-size: max(2vw,12px);
+  }
+}
 
 @media screen and (max-width: 400px) {
   .chara-buttons button {
-    width: 10vw;
+    width: max(10vw,40px);
     margin: 0 3vw;
   }
 }
@@ -1244,12 +1311,14 @@ background-image: url("https://www.transparenttextures.com/patterns/dark-geometr
   padding-right: 2.5vw;
   font-family: "Oswald";
   font-size: 55px;
+  white-space: nowrap;
 }
 .schedule-date::before {
   content: "Date  ";
   font-size: 30px;
   padding-top: 23px;
   padding-right: 1vw;
+  white-space: nowrap;
 }
 
 .schedule-date-line {
@@ -1325,6 +1394,7 @@ background-image: url("https://www.transparenttextures.com/patterns/dark-geometr
   font-weight: 500;
   font-size: calc(40 / 1920 * 100vw);
   color: #323232;
+  white-space: nowrap;
 }
 
 .schedule-spotimg {
@@ -1362,6 +1432,7 @@ background-image: url("https://www.transparenttextures.com/patterns/dark-geometr
   padding-right: 2vw;
   color: #323232;
   font-size: 50px;
+  white-space: nowrap;
 }
 .schedule-time::before {
   content: "⌚開演時間";
@@ -1497,16 +1568,16 @@ background-image: url("https://www.transparenttextures.com/patterns/dark-geometr
 }
 @media screen and (max-width: 1050px) {
   .schedule-spotname {
-    font-size: 3.622vw;
+    font-size: max(13px,3.622vw);
   }
   .schedule-spotname::before {
-    font-size: 2.0193vw;
+    font-size: max(6px,2.0193vw);
   }
   .schedule-time {
-    font-size: 3.6322vw;
+    font-size: max(13px,3.6322vw);
   }
   .schedule-time::before {
-    font-size: 2.8258vw;
+    font-size: max(6px,2.8258vw);
   }
 
   .schedule-spotimg {
@@ -1533,10 +1604,10 @@ background-image: url("https://www.transparenttextures.com/patterns/dark-geometr
     font-size: 8vw;
   }
   .schedule-date {
-    font-size: 6.3vw;
+    font-size: max(6.3vw,24px);
   }
   .schedule-date::before {
-    font-size: 3.3vw;
+    font-size: max(3.3vw,15px);
   }
   .schedule-content-wrap {
     margin: 5.7vw 0;
