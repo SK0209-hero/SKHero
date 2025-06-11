@@ -23,15 +23,16 @@
   --light-pulse-color: rgba(255, 255, 255, 0.2); /* 光の脈動の色 */
   --light-pulse-duration: 2s; /* 光の脈動のアニメーション時間 */
 }
-img {
-  pointer-events: none;
-}
 body {
   margin: 0;
   overflow-x: hidden;
   font-family: Arial, sans-serif;
   background-color: #ffffff;
   background-image: url("img/background.png");
+}
+img {
+  pointer-events: none;
+  white-space: nowrap;
 }
 
 .area-poster {
