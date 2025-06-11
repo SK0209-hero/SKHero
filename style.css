@@ -901,7 +901,7 @@ background-image: url("https://www.transparenttextures.com/patterns/dark-geometr
 }
 @media screen and (max-width: 840px) {
   #chara-title {
-    font-size: 8vw;
+    font-size: max(32px,8vw);
   }
 }
 @media screen and (max-width: 600px) {
@@ -950,6 +950,11 @@ background-image: url("https://www.transparenttextures.com/patterns/dark-geometr
   }
   .chara-intro{
     height: 160vw;
+  }
+}
+@media screen and (max-width: 350px) {
+  #chara-title {
+    font-size: max(28px,8vw);
   }
 }
 @media screen and (max-width: 335px) {
@@ -1600,7 +1605,7 @@ background-image: url("https://www.transparenttextures.com/patterns/dark-geometr
     margin-bottom: -1vw;
   }
   #schedule-title {
-    font-size: 8vw;
+    font-size: max(32px,8vw);
   }
   .schedule-date {
     font-size: max(6.3vw,24px);
@@ -1655,6 +1660,11 @@ background-image: url("https://www.transparenttextures.com/patterns/dark-geometr
   .schedule-line::after,
   .schedule-line::before {
     right: 0.2vw;
+  }
+}
+@media screen and (max-width: 350px) {
+  #schedule-title {
+    font-size: max(28px,8vw);
   }
 }
 @media screen and (max-width: 280px) {
@@ -1765,7 +1775,7 @@ background-image: url("https://www.transparenttextures.com/patterns/dark-geometr
 
 @media screen and (max-width: 840px) {
   #cast-title {
-    font-size: 8vw;
+    font-size: max(32px,8vw);
   }
   .cast-title {
     font-size: 6.857vw;
@@ -1810,6 +1820,11 @@ background-image: url("https://www.transparenttextures.com/patterns/dark-geometr
   }
   .cast-delay-3 {
     animation-delay: 0.1;
+  }
+}
+@media screen and (max-width: 350px) {
+  #cast-title {
+    font-size: max(28px,8vw);
   }
 }
 
