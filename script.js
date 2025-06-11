@@ -367,7 +367,7 @@ let isLoaded = false;
 let canFinish = false;
 const percentageElement = document.getElementById("percentage");
 const startTime = Date.now();
-const minLoadTime = 3000; // 最低3秒
+const minLoadTime = 0;
 
 // プログレスバーとパーセンテージの更新
 const updateProgress = () => {
