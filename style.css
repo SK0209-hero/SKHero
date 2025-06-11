@@ -850,6 +850,7 @@ background-image: url("https://www.transparenttextures.com/patterns/dark-geometr
   }
   .chara-image {
     height: 60%;
+    width:100%;
   }
   .chara-textarea {
     height: 40%;
@@ -915,6 +916,10 @@ background-image: url("https://www.transparenttextures.com/patterns/dark-geometr
   .chara-intro{
     height: 90vw;
   }
+  .chara-textarea {
+    width: 90%;
+    
+  }
 }
 @media screen and (max-width: 510px) {
   .chara-container {
@@ -943,6 +948,7 @@ background-image: url("https://www.transparenttextures.com/patterns/dark-geometr
   .chara-intro{
     height: 140vw;
   }
+  
 }
 @media screen and (max-width: 360px) {
   .chara-container {
