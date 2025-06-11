@@ -162,7 +162,11 @@ const particleInterval = setInterval(() => {
         
         // よく使われる画像ファイル名のパターン（実際のプロジェクトでは動的に取得）
         const commonImageNames = [
-            'secret1', 'secret2', 'secret3', 'secret4', 'secret5'
+            "gallery1", "gallery2", "gallery3", "gallery4", "gallery5",
+  "gallery6", "gallery7", "gallery8", "gallery9", "gallery10",
+  "gallery11", "gallery12", "gallery13", "gallery14", "gallery15",
+  "gallery16", "gallery17", "gallery18", "gallery19", "gallery20",
+  "gallery21", "gallery22", "gallery23", "gallery24", "gallery25"
         ];
 
         let foundImages = [];
@@ -216,14 +220,14 @@ const particleInterval = setInterval(() => {
             try {
                 // 様々な画像ファイル名と拡張子の組み合わせを試す
                 for (const name of commonImageNames) {
-                        const imagePath = `img/secret/${name}.jpg`;
+                        const imagePath = `img/secret/gallery/${name}.webp`;
                         
                         try {
                             const exists = await checkImageExists(imagePath);
                             if (exists) {
                                 foundImages.push({
                                     path: imagePath,
-                                    name: `${name}.jpg`,
+                                    name: `${name}.webp`,
                                     displayName: name.charAt(0).toUpperCase() + name.slice(1)
                                 });
                             }
