@@ -157,3 +157,185 @@ const particleInterval = setInterval(() => {
     }
   }, 8000);
 }, 800);
+
+ // 画像ファイルの拡張子リスト
+        
+        // よく使われる画像ファイル名のパターン（実際のプロジェクトでは動的に取得）
+        const commonImageNames = [
+            'secret1', 'secret2', 'secret3', 'secret4', 'secret5'
+        ];
+
+        let foundImages = [];
+        let modal, modalImg, closeBtn, prevBtn, nextBtn, modalTitle, modalCounter;
+        let currentImageIndex = 0;
+
+        // DOM要素を取得
+        window.addEventListener('DOMContentLoaded', function() {
+            modal = document.getElementById('modal');
+            modalImg = document.getElementById('modal-img');
+            closeBtn = document.querySelector('.close');
+            prevBtn = document.getElementById('prevBtn');
+            nextBtn = document.getElementById('nextBtn');
+            modalTitle = document.getElementById('modal-title');
+            modalCounter = document.getElementById('modal-counter');
+            
+            // モーダルイベント
+            closeBtn.onclick = closeModal;
+            prevBtn.onclick = showPrevImage;
+            nextBtn.onclick = showNextImage;
+            
+            modal.onclick = function(e) {
+                if (e.target === modal) closeModal();
+            };
+            
+            // キーボードイベント
+            document.addEventListener('keydown', function(e) {
+                if (modal.style.display === 'block') {
+                    switch(e.key) {
+                        case 'Escape':
+                            closeModal();
+                            break;
+                        case 'ArrowLeft':
+                            showPrevImage();
+                            break;
+                        case 'ArrowRight':
+                            showNextImage();
+                            break;
+                    }
+                }
+            });
+            
+            loadImages();
+        });
+
+        async function loadImages() {
+            const loadingEl = document.getElementById('gallery-loading');
+            const errorEl = document.getElementById('error');
+            const galleryEl = document.getElementById('gallery');
+
+            try {
+                // 様々な画像ファイル名と拡張子の組み合わせを試す
+                for (const name of commonImageNames) {
+                        const imagePath = `img/secret/${name}.jpg`;
+                        
+                        try {
+                            const exists = await checkImageExists(imagePath);
+                            if (exists) {
+                                foundImages.push({
+                                    path: imagePath,
+                                    name: `${name}.jpg`,
+                                    displayName: name.charAt(0).toUpperCase() + name.slice(1)
+                                });
+                            }
+                        } catch (e) {
+                            // 画像が存在しない場合は無視
+                        }
+                }
+
+                loadingEl.style.display = 'none';
+
+                if (foundImages.length === 0) {
+                    errorEl.style.display = 'block';
+                    errorEl.innerHTML = `
+                        <h3>画像が見つかりませんでした</h3>
+                        <p>img/secretフォルダに以下のような名前の画像ファイルを配置してください：</p>
+                    `;
+                    return;
+                }
+
+                displayGallery();
+                galleryEl.style.display = 'grid';
+
+            } catch (error) {
+                loadingEl.style.display = 'none';
+                errorEl.style.display = 'block';
+                console.error('画像読み込みエラー:', error);
+            }
+        }
+
+        function checkImageExists(imagePath) {
+            return new Promise((resolve) => {
+                const img = new Image();
+                img.onload = () => resolve(true);
+                img.onerror = () => resolve(false);
+                img.src = imagePath;
+            });
+        }
+
+        function displayGallery() {
+            const galleryEl = document.getElementById('gallery');
+            
+            foundImages.forEach((image, index) => {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'gallery-item';
+                galleryItem.style.animationDelay = `${index * 0.1}s`;
+                
+                galleryItem.innerHTML = `
+                    <img src="${image.path}" alt="${image.displayName}" loading="lazy">
+                `;
+                
+                // クリックでモーダル表示
+                galleryItem.addEventListener('click', () => {
+                    openModal(index);
+                });
+                
+                galleryEl.appendChild(galleryItem);
+            });
+        }
+
+        function openModal(imageIndex) {
+            currentImageIndex = imageIndex;
+            showCurrentImage();
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function showCurrentImage() {
+            const currentImage = foundImages[currentImageIndex];
+            modalImg.src = currentImage.path;
+            modalImg.alt = currentImage.displayName;
+            
+            // ボタンの状態を更新
+            prevBtn.disabled = currentImageIndex === 0;
+            nextBtn.disabled = currentImageIndex === foundImages.length - 1;
+        }
+
+        function showPrevImage() {
+            if (currentImageIndex > 0) {
+                currentImageIndex--;
+                showCurrentImage();
+            }
+        }
+
+        function showNextImage() {
+            if (currentImageIndex < foundImages.length - 1) {
+                currentImageIndex++;
+                showCurrentImage();
+            }
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // 画像の遅延読み込み効果
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            .gallery-item {
+                animation: fadeInUp 0.6s ease forwards;
+                opacity: 0;
+            }
+        `;
+        document.head.appendChild(style);
