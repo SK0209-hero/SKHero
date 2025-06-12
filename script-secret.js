@@ -166,7 +166,7 @@ const particleInterval = setInterval(() => {
   "gallery6", "gallery7", "gallery8", "gallery9", "gallery10",
   "gallery11", "gallery12", "gallery13", "gallery14", "gallery15",
   "gallery16", "gallery17", "gallery18", "gallery19", "gallery20",
-  "gallery21", "gallery22", "gallery23", "gallery24", "gallery25"
+  "gallery21", "gallery22", "gallery23", "gallery24", "gallery25", "gallery26"
         ];
 
         let foundImages = [];
