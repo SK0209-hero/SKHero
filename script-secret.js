@@ -158,9 +158,7 @@ const particleInterval = setInterval(() => {
   }, 8000);
 }, 800);
 
- // 画像ファイルの拡張子リスト
         
-        // よく使われる画像ファイル名のパターン（実際のプロジェクトでは動的に取得）
         const commonImageNames = [
             "gallery1", "gallery2", "gallery3", "gallery4", "gallery5",
   "gallery6", "gallery7", "gallery8", "gallery9", "gallery10",
@@ -173,7 +171,6 @@ const particleInterval = setInterval(() => {
         let modal, modalImg, closeBtn, prevBtn, nextBtn, modalTitle, modalCounter;
         let currentImageIndex = 0;
 
-        // DOM要素を取得
         window.addEventListener('DOMContentLoaded', function() {
             modal = document.getElementById('modal');
             modalImg = document.getElementById('modal-img');
